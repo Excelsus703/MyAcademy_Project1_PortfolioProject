@@ -1,0 +1,25 @@
+﻿@model Skill
+@{
+    ViewData["Title"] = "Yetenek Güncelle";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<form class="form-control" method="post">
+    <label>Yetenek Adı</label>
+    <input type="text" asp-for="Name" class="form-control" required />
+    <br />
+    <label>Durum</label>
+    <select class="form-control" asp-for="IsActive" required>
+        <option value="true" selected>Aktif</option>
+        <option value="false">Pasif</option>
+    </select>
+    <br />
+    <label>Kategori</label>
+    <select class="form-control" asp-for="SkillCategoryId" required>
+        <option value="1" selected>Frontend</option>
+        <option value="2">Backend</option>
+        <option value="3">Mobil</option>
+    </select>
+    <br />
+    <button class="btn btn-outline-success">Güncelle</button>
+</form>

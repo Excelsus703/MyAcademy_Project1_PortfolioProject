@@ -1,0 +1,59 @@
+﻿@model List<UserMessage>
+@*
+    Dashboard Recent Messages Info
+*@
+
+@{
+    string fontIsRead = "";
+}
+
+<table class="w-full text-left border-collapse">
+    <thead>
+        <tr class="bg-surface-container-low font-label-caps text-label-caps text-on-surface-variant border-b border-outline-variant">
+            <th class="px-lg py-3 font-semibold tracking-wider">GÖNDEREN</th>
+            <th class="px-lg py-3 font-semibold tracking-wider">EMAİL</th>
+            <th class="px-lg py-3 font-semibold tracking-wider">MESAJ</th>
+            <th class="px-lg py-3 font-semibold tracking-wider">DURUM</th>
+            <th class="px-lg py-3 font-semibold tracking-wider text-right">Mesaj Detayını Göster</th>
+        </tr>
+    </thead>
+    <tbody class="font-body-md text-body-md text-on-surface">
+        @foreach (var item in Model)
+        {
+            @switch (item.IsRead)
+            {
+                case true:
+                    fontIsRead = "font-medium";
+                    break;
+                case false:
+                    fontIsRead = "font-black";
+                    break;
+                default:
+            }
+
+            <tr class="border-b border-outline-variant hover:bg-surface-container-low transition-colors group @fontIsRead">
+                <td class="px-lg py-4 font-semibold">@item.Name</td>
+                <td class="px-lg py-4 text-on-surface-variant">@item.Email</td>
+                <td class="px-lg py-4 text-on-surface-variant">@item.MessageBody.Substring(0, 30)...</td>
+                @if (item.IsRead == true)
+                {
+                    <td class="px-lg py-4">
+                        <span class="inline-flex items-center px-2 py-1 rounded-full bg-surface-container-highest text-on-surface-variant font-label-caps text-label-caps">Okundu</span>
+                    </td>
+                    <td class="px-lg py-4 text-right">
+                        <a href="/UserMessage/MessageDetails/@item.Id" class="inline-flex items-center justify-center w-25 h-25 rounded-full bg-surface-container-highest text-on-surface-variant hover:bg-primary-fixed hover:text-primary transition-colors shadow-sm"><span class="material-symbols-outlined text-body-xl">drafts</span></a>
+                    </td>
+                }
+                else
+                {
+                    <td class="px-lg py-4">
+                        <span class="inline-flex items-center px-2 py-1 rounded-full bg-primary-fixed text-primary font-label-caps text-label-caps">Okunmadı</span>
+                    </td>
+                    <td class="px-lg py-4 text-right">
+                        <a href="/UserMessage/MessageDetails/@item.Id" class="inline-flex items-center justify-center w-25 h-25 rounded-full bg-surface-container-highest text-on-surface-variant hover:bg-primary-fixed hover:text-primary transition-colors shadow-sm"><span class="material-symbols-outlined text-body-xl">mail</span></a>
+                    </td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>

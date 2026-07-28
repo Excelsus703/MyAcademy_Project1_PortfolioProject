@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+
+<html class="light" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Portfolio CMS - Proje Teknolojileri</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#c0c1ff",
+                        "on-primary-fixed-variant": "#2f2ebe",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed": "#131b2e",
+                        "primary-fixed": "#e1e0ff",
+                        "primary-container": "#6063ee",
+                        "primary": "#4648d4",
+                        "error-container": "#ffdad6",
+                        "tertiary-container": "#727577",
+                        "tertiary-fixed-dim": "#c4c7c9",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "on-primary-container": "#fffbff",
+                        "surface-container-highest": "#d3e4fe",
+                        "inverse-surface": "#213145",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary": "#595c5e",
+                        "on-tertiary-container": "#fbfdff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "surface-dim": "#cbdbf5",
+                        "inverse-primary": "#c0c1ff",
+                        "secondary-container": "#dae2fd",
+                        "on-background": "#0b1c30",
+                        "on-primary-fixed": "#07006c",
+                        "tertiary-fixed": "#e0e3e5",
+                        "on-surface": "#0b1c30",
+                        "background": "#f8f9ff",
+                        "secondary-fixed": "#dae2fd",
+                        "on-error": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "surface": "#f8f9ff",
+                        "surface-bright": "#f8f9ff",
+                        "surface-container-high": "#dce9ff",
+                        "outline": "#767586",
+                        "surface-tint": "#494bd6",
+                        "on-tertiary-fixed-variant": "#444749",
+                        "surface-container": "#e5eeff",
+                        "secondary": "#565e74",
+                        "on-secondary-container": "#5c647a",
+                        "surface-variant": "#d3e4fe",
+                        "error": "#ba1a1a",
+                        "outline-variant": "#c7c4d7",
+                        "surface-container-low": "#eff4ff",
+                        "on-surface-variant": "#464554",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed": "#191c1e",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "on-tertiary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "stack-sm": "8px",
+                        "sidebar-width": "280px",
+                        "gutter": "24px",
+                        "margin-desktop": "32px",
+                        "stack-md": "16px",
+                        "stack-lg": "24px",
+                        "container-max": "1440px"
+                    },
+                    "fontFamily": {
+                        "display-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-sm": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-tertiary text-on-surface font-body-md h-screen overflow-hidden flex">
+<!-- SideNavBar -->
+<nav class="hidden md:flex flex-col bg-secondary dark:bg-secondary-fixed-dim text-on-primary dark:text-on-primary-fixed fixed left-0 top-0 h-screen w-sidebar-width py-stack-lg border-r border-outline-variant/30">
+<div class="px-stack-lg mb-stack-lg">
+<h1 class="font-headline-lg text-headline-lg font-bold text-on-primary dark:text-on-primary-fixed">Portfolio Admin</h1>
+<p class="font-label-md text-label-md text-on-primary/60 mt-stack-sm">Command Center</p>
+</div>
+<div class="flex-1 overflow-y-auto overflow-x-hidden px-stack-md flex flex-col gap-stack-sm">
+<a class="flex items-center gap-stack-md px-stack-md py-stack-sm text-on-primary/60 hover:text-on-primary hover:bg-on-primary/10 transition-all rounded-lg scale-98 active:opacity-80" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-stack-md px-stack-md py-stack-sm text-on-primary/60 hover:text-on-primary hover:bg-on-primary/10 transition-all rounded-lg scale-98 active:opacity-80" href="#">
+<span class="material-symbols-outlined">star</span>
+                Banner / Hero
+            </a>
+<a class="flex items-center gap-stack-md px-stack-md py-stack-sm text-on-primary/60 hover:text-on-primary hover:bg-on-primary/10 transition-all rounded-lg scale-98 active:opacity-80" href="#">
+<span class="material-symbols-outlined">folder_special</span>
+                Projelerim
+            </a>
+<a class="flex items-center gap-stack-md px-stack-md py-stack-sm border-l-4 border-primary bg-on-primary/10 text-on-primary font-bold rounded-r-lg scale-98 active:opacity-80" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">code</span>
+                Proje Teknolojileri
+            </a>
+<a class="flex items-center gap-stack-md px-stack-md py-stack-sm text-on-primary/60 hover:text-on-primary hover:bg-on-primary/10 transition-all rounded-lg scale-98 active:opacity-80" href="#">
+<span class="material-symbols-outlined">psychology</span>
+                Yeteneklerim
+            </a>
+<a class="flex items-center gap-stack-md px-stack-md py-stack-sm text-on-primary/60 hover:text-on-primary hover:bg-on-primary/10 transition-all rounded-lg scale-98 active:opacity-80" href="#">
+<span class="material-symbols-outlined">person</span>
+                Hakkımda
+            </a>
+<a class="flex items-center gap-stack-md px-stack-md py-stack-sm text-on-primary/60 hover:text-on-primary hover:bg-on-primary/10 transition-all rounded-lg scale-98 active:opacity-80" href="#">
+<span class="material-symbols-outlined">school</span>
+                Eğitimlerim
+            </a>
+<a class="flex items-center gap-stack-md px-stack-md py-stack-sm text-on-primary/60 hover:text-on-primary hover:bg-on-primary/10 transition-all rounded-lg scale-98 active:opacity-80" href="#">
+<span class="material-symbols-outlined">work</span>
+                İş Deneyimlerim
+            </a>
+<a class="flex items-center gap-stack-md px-stack-md py-stack-sm text-on-primary/60 hover:text-on-primary hover:bg-on-primary/10 transition-all rounded-lg scale-98 active:opacity-80" href="#">
+<span class="material-symbols-outlined">handshake</span>
+                Hizmetlerim
+            </a>
+<a class="flex items-center gap-stack-md px-stack-md py-stack-sm text-on-primary/60 hover:text-on-primary hover:bg-on-primary/10 transition-all rounded-lg scale-98 active:opacity-80" href="#">
+<span class="material-symbols-outlined">format_quote</span>
+                Hakkımda Söylenenler
+            </a>
+<a class="flex items-center gap-stack-md px-stack-md py-stack-sm text-on-primary/60 hover:text-on-primary hover:bg-on-primary/10 transition-all rounded-lg scale-98 active:opacity-80" href="#">
+<span class="material-symbols-outlined">mail</span>
+                Gelen Mesajlar
+            </a>
+</div>
+<div class="mt-auto px-stack-md pt-stack-md border-t border-outline-variant/20">
+<a class="flex items-center gap-stack-md px-stack-md py-stack-sm text-on-primary/60 hover:text-on-primary hover:bg-on-primary/10 transition-all rounded-lg scale-98 active:opacity-80" href="#">
+<span class="material-symbols-outlined">logout</span>
+                Logout
+            </a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 flex flex-col md:ml-[280px] h-screen overflow-hidden bg-background">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-surface-dim docked full-width top-0 sticky z-40 border-b border-outline-variant dark:border-outline flex justify-between items-center px-margin-desktop h-16">
+<div class="flex items-center gap-stack-md">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer md:hidden hover:bg-surface-container-low p-2 rounded-full transition-colors">menu</span>
+<div class="font-headline-md text-headline-md font-semibold text-on-surface dark:text-inverse-on-surface">Portfolio CMS</div>
+</div>
+<div class="flex-1 max-w-md mx-stack-lg hidden md:block">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border border-outline-variant rounded-full text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="Ara..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-stack-sm text-primary dark:text-primary-fixed-dim">
+<button class="p-2 rounded-full hover:bg-surface-container-low transition-colors cursor-pointer active:opacity-70">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 rounded-full hover:bg-surface-container-low transition-colors cursor-pointer active:opacity-70">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<button class="p-2 rounded-full hover:bg-surface-container-low transition-colors cursor-pointer active:opacity-70">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Canvas -->
+<main class="flex-1 overflow-y-auto p-margin-mobile md:p-margin-desktop">
+<div class="max-w-container-max mx-auto space-y-gutter">
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-stack-md">
+<div>
+<h2 class="font-display-sm text-display-sm text-on-background">Proje Teknolojileri</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-1">Manage the tech stack icons used across your portfolio.</p>
+</div>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-lg font-label-md text-label-md hover:bg-primary-container transition-colors flex items-center gap-2 self-start md:self-auto">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                        Add Technology
+                    </button>
+</div>
+<!-- Content Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+<!-- Left Column: Add/Edit Form (Takes 1 col on large) -->
+<div class="lg:col-span-1 space-y-gutter">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-stack-lg shadow-sm">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-stack-lg border-b border-outline-variant/50 pb-2">Yeni Teknoloji Ekle</h3>
+<form class="space-y-stack-md">
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-1">Teknoloji Adı</label>
+<input class="w-full bg-surface border border-outline-variant rounded-lg px-3 py-2 text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" placeholder="Örn: React, Node.js" type="text"/>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-1">Kategori</label>
+<select class="w-full bg-surface border border-outline-variant rounded-lg px-3 py-2 text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors appearance-none">
+<option>Frontend</option>
+<option>Backend</option>
+<option>Database</option>
+<option>DevOps</option>
+<option>Design</option>
+</select>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-1">İkon (SVG veya URL)</label>
+<div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-outline-variant border-dashed rounded-lg hover:border-primary hover:bg-surface-container-low transition-colors cursor-pointer group">
+<div class="space-y-1 text-center">
+<span class="material-symbols-outlined text-outline group-hover:text-primary text-4xl mb-2 block">cloud_upload</span>
+<div class="flex text-body-md text-on-surface-variant justify-center">
+<label class="relative cursor-pointer rounded-md font-medium text-primary hover:text-primary-container focus-within:outline-none">
+<span>Upload a file</span>
+<input class="sr-only" id="file-upload" name="file-upload" type="file"/>
+</label>
+<p class="pl-1">or drag and drop</p>
+</div>
+<p class="text-xs text-on-surface-variant/70">SVG up to 2MB</p>
+</div>
+</div>
+</div>
+<div class="pt-stack-sm flex justify-end gap-3 border-t border-outline-variant/50">
+<button class="px-4 py-2 rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-highest transition-colors" type="button">Cancel</button>
+<button class="px-4 py-2 rounded-lg font-label-md text-label-md bg-primary text-on-primary hover:bg-primary-container transition-colors" type="submit">Save</button>
+</div>
+</form>
+</div>
+</div>
+<!-- Right Column: Tech List (Takes 2 cols on large) -->
+<div class="lg:col-span-2">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm flex flex-col h-full">
+<!-- List Header / Filters -->
+<div class="p-stack-md border-b border-outline-variant bg-surface flex flex-wrap gap-3 items-center justify-between">
+<div class="flex gap-2 flex-wrap">
+<button class="px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md border border-transparent">All</button>
+<button class="px-3 py-1 rounded-full bg-surface border border-outline-variant text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-low transition-colors">Frontend</button>
+<button class="px-3 py-1 rounded-full bg-surface border border-outline-variant text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-low transition-colors">Backend</button>
+<button class="px-3 py-1 rounded-full bg-surface border border-outline-variant text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-low transition-colors">Design</button>
+</div>
+<div class="relative w-full sm:w-auto">
+<span class="material-symbols-outlined absolute left-2 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span>
+<input class="w-full sm:w-48 pl-8 pr-3 py-1.5 bg-surface border border-outline-variant rounded-lg text-body-md focus:border-primary outline-none text-sm" placeholder="Filter..." type="text"/>
+</div>
+</div>
+<!-- Tech Grid -->
+<div class="p-stack-lg grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-stack-md overflow-y-auto">
+<!-- Tech Card Item -->
+<div class="group relative border border-outline-variant rounded-lg p-stack-md bg-surface hover:border-primary hover:shadow-md transition-all flex flex-col items-center justify-center gap-3">
+<div class="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity flex gap-1">
+<button class="text-tertiary hover:text-primary transition-colors"><span class="material-symbols-outlined text-[16px]">edit</span></button>
+<button class="text-tertiary hover:text-error transition-colors"><span class="material-symbols-outlined text-[16px]">delete</span></button>
+</div>
+<div class="w-12 h-12 bg-surface-container-highest rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">code</span>
+</div>
+<div class="text-center">
+<h4 class="font-headline-md text-sm font-semibold text-on-surface">React</h4>
+<span class="text-xs text-on-surface-variant px-2 py-0.5 rounded-full bg-surface-container-high mt-1 inline-block">Frontend</span>
+</div>
+</div>
+<!-- Tech Card Item -->
+<div class="group relative border border-outline-variant rounded-lg p-stack-md bg-surface hover:border-primary hover:shadow-md transition-all flex flex-col items-center justify-center gap-3">
+<div class="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity flex gap-1">
+<button class="text-tertiary hover:text-primary transition-colors"><span class="material-symbols-outlined text-[16px]">edit</span></button>
+<button class="text-tertiary hover:text-error transition-colors"><span class="material-symbols-outlined text-[16px]">delete</span></button>
+</div>
+<div class="w-12 h-12 bg-surface-container-highest rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">terminal</span>
+</div>
+<div class="text-center">
+<h4 class="font-headline-md text-sm font-semibold text-on-surface">Node.js</h4>
+<span class="text-xs text-on-surface-variant px-2 py-0.5 rounded-full bg-surface-container-high mt-1 inline-block">Backend</span>
+</div>
+</div>
+<!-- Tech Card Item -->
+<div class="group relative border border-outline-variant rounded-lg p-stack-md bg-surface hover:border-primary hover:shadow-md transition-all flex flex-col items-center justify-center gap-3">
+<div class="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity flex gap-1">
+<button class="text-tertiary hover:text-primary transition-colors"><span class="material-symbols-outlined text-[16px]">edit</span></button>
+<button class="text-tertiary hover:text-error transition-colors"><span class="material-symbols-outlined text-[16px]">delete</span></button>
+</div>
+<div class="w-12 h-12 bg-surface-container-highest rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">database</span>
+</div>
+<div class="text-center">
+<h4 class="font-headline-md text-sm font-semibold text-on-surface">PostgreSQL</h4>
+<span class="text-xs text-on-surface-variant px-2 py-0.5 rounded-full bg-surface-container-high mt-1 inline-block">Database</span>
+</div>
+</div>
+<!-- Tech Card Item -->
+<div class="group relative border border-outline-variant rounded-lg p-stack-md bg-surface hover:border-primary hover:shadow-md transition-all flex flex-col items-center justify-center gap-3">
+<div class="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity flex gap-1">
+<button class="text-tertiary hover:text-primary transition-colors"><span class="material-symbols-outlined text-[16px]">edit</span></button>
+<button class="text-tertiary hover:text-error transition-colors"><span class="material-symbols-outlined text-[16px]">delete</span></button>
+</div>
+<div class="w-12 h-12 bg-surface-container-highest rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">brush</span>
+</div>
+<div class="text-center">
+<h4 class="font-headline-md text-sm font-semibold text-on-surface">Figma</h4>
+<span class="text-xs text-on-surface-variant px-2 py-0.5 rounded-full bg-surface-container-high mt-1 inline-block">Design</span>
+</div>
+</div>
+<!-- Tech Card Item -->
+<div class="group relative border border-outline-variant rounded-lg p-stack-md bg-surface hover:border-primary hover:shadow-md transition-all flex flex-col items-center justify-center gap-3">
+<div class="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity flex gap-1">
+<button class="text-tertiary hover:text-primary transition-colors"><span class="material-symbols-outlined text-[16px]">edit</span></button>
+<button class="text-tertiary hover:text-error transition-colors"><span class="material-symbols-outlined text-[16px]">delete</span></button>
+</div>
+<div class="w-12 h-12 bg-surface-container-highest rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">data_object</span>
+</div>
+<div class="text-center">
+<h4 class="font-headline-md text-sm font-semibold text-on-surface">Python</h4>
+<span class="text-xs text-on-surface-variant px-2 py-0.5 rounded-full bg-surface-container-high mt-1 inline-block">Backend</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

@@ -1,0 +1,19 @@
+﻿@model ProjectTechStack
+@{
+    ViewData["Title"] = "Proje Teknolojileri Oluştur";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<form method="post" class="form-control">
+    <label>Proje</label>
+    <select class="form-control" asp-for="ProjectId" asp-items="@ViewBag.projects" required>
+        <option selected disabled>---Projeyi Seçiniz---</option>
+    </select>
+    <br />
+    <label>Teknoloji</label>
+    <select class="form-control" asp-for="TechStackId" asp-items="@ViewBag.techStacks" required>
+        <option selected disabled>---Teknolojiyi Seçiniz---</option>
+    </select>
+    <br />
+    <button class="btn btn-outline-dark">Kaydet</button>
+</form>

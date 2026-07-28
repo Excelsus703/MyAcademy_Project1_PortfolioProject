@@ -1,0 +1,114 @@
+﻿@model DashboardViewModel
+@{
+    ViewData["Title"] = "Dashboard";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<section class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-md">
+    <!-- Card 1 -->
+    <div class="bg-surface border border-outline-variant rounded-xl p-lg shadow-smoked flex flex-col justify-between hover:-translate-y-1 transition-transform duration-300">
+        <div class="flex justify-between items-start mb-md">
+            <div class="p-2 bg-primary-fixed text-primary rounded-lg">
+                <span class="material-symbols-outlined" data-icon="folder_copy">folder_copy</span>
+            </div>
+            <span class="font-label-caps text-label-caps text-on-surface-variant bg-surface-container-high px-2 py-1 rounded">TÜM ZAMANLAR</span>
+        </div>
+        <div>
+            <h3 class="font-body-sm text-body-sm text-on-surface-variant">Toplam Proje</h3>
+            <p class="font-display-lg text-display-lg text-on-background mt-1">@Model.TotalProjectCount</p>
+        </div>
+    </div>
+    <!-- Card 2 -->
+    <div class="bg-surface border border-outline-variant rounded-xl p-lg shadow-smoked flex flex-col justify-between hover:-translate-y-1 transition-transform duration-300">
+        <div class="flex justify-between items-start mb-md">
+            <div class="p-2 bg-secondary-fixed text-secondary rounded-lg">
+                <span class="material-symbols-outlined" data-icon="bolt">bolt</span>
+            </div>
+            <span class="font-label-caps text-label-caps text-on-surface-variant bg-surface-container-high px-2 py-1 rounded">AKTİF</span>
+        </div>
+        <div>
+            <h3 class="font-body-sm text-body-sm text-on-surface-variant">Yetenekler</h3>
+            <p class="font-display-lg text-display-lg text-on-background mt-1">@Model.TotalSkillCount</p>
+        </div>
+    </div>
+    <!-- Card 3 -->
+    <div class="bg-surface border border-outline-variant rounded-xl p-lg shadow-smoked flex flex-col justify-between hover:-translate-y-1 transition-transform duration-300 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-24 h-24 bg-tertiary-fixed rounded-bl-full opacity-50 pointer-events-none"></div>
+        <div class="flex justify-between items-start mb-md relative z-10">
+            <div class="p-2 bg-tertiary-fixed text-tertiary rounded-lg">
+                <span class="material-symbols-outlined" data-icon="mail">mail</span>
+            </div>
+            <span class="font-label-caps text-label-caps text-tertiary bg-tertiary-fixed-dim px-2 py-1 rounded flex items-center gap-1">
+                <span class="w-1.5 h-1.5 rounded-full bg-error animate-pulse"></span>
+                YENİ
+            </span>
+        </div>
+        <div class="relative z-10">
+            <h3 class="font-body-sm text-body-sm text-on-surface-variant">Mesajlar</h3>
+            <div class="flex items-baseline gap-2 mt-1">
+                <p class="font-display-lg text-display-lg text-on-background">@Model.TotalMessagesCount</p>
+                <span class="font-body-sm text-body-sm text-tertiary">okunmamış</span>
+            </div>
+        </div>
+    </div>
+    <!-- Card 4 -->
+    <div class="bg-surface border border-outline-variant rounded-xl p-lg shadow-smoked flex flex-col justify-between hover:-translate-y-1 transition-transform duration-300">
+        <div class="flex justify-between items-start mb-md">
+            <div class="p-2 bg-surface-container-highest text-on-surface rounded-lg">
+                <span class="material-symbols-outlined" data-icon="design_services">design_services</span>
+            </div>
+        </div>
+        <div>
+            <h3 class="font-body-sm text-body-sm text-on-surface-variant">Toplam Hizmet</h3>
+            <p class="font-display-lg text-display-lg text-on-background mt-1">@Model.TotalServiceCount <span class="font-title-sm text-title-sm text-on-surface-variant">Adet</span></p>
+        </div>
+    </div>
+</section>
+<!-- Main Content Area -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-lg">
+    <!-- Recent Projects Table (Spans 2 columns) -->
+    <section class="lg:col-span-2 bg-surface border border-outline-variant rounded-xl shadow-smoked overflow-hidden flex flex-col">
+        <div class="px-lg py-md border-b border-outline-variant flex justify-between items-center bg-surface-container-lowest">
+            <h2 class="font-display-sm text-display-sm text-on-background">Son Projeler</h2>
+            <a href="/Project/Index/" class="btn btn-outline-primary">Tümünü Gör</a>
+        </div>
+        <div class="overflow-x-auto">
+            @await Component.InvokeAsync("_AdminDashboardRecentProjects")
+        </div>
+    </section>
+    <!-- Sidebar Widgets -->
+    <div class="space-y-lg">
+        <!-- Skill Distribution -->
+        <section class="bg-surface border border-outline-variant rounded-xl shadow-smoked p-lg">
+            <h2 class="font-title-sm text-title-sm text-on-background mb-md pb-2 border-b border-outline-variant">Yetenek Dağılımı</h2>
+            <div class="space-y-4">
+                @await Component.InvokeAsync("_AdminDashboardSkillRating")
+            </div>
+        </section>
+        <!-- Quick Actions (Glassmorphism inspired) -->
+        <section class="relative bg-gradient-to-br from-surface-container-low to-surface-bright border border-outline-variant rounded-xl shadow-smoked p-lg overflow-hidden">
+            <!-- Decorative blob -->
+            <div class="absolute -top-10 -right-10 w-32 h-32 bg-primary-fixed rounded-full blur-2xl opacity-40"></div>
+            <h2 class="relative z-10 font-title-sm text-title-sm text-on-background mb-md pb-2 border-b border-outline-variant/50">Hızlı İşlemler</h2>
+            <div class="relative z-10 flex flex-col gap-3">
+                <a href="/Project/CreateProject/" class="w-full bg-primary-container text-on-primary-container font-title-sm text-title-sm py-2 px-4 rounded-lg flex items-center justify-center gap-2 hover:bg-primary transition-colors shadow-sm" style="color:aliceblue;">
+                    <span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+                    Yeni Proje Ekle
+                </a>
+                <a href="/Default/Index/" class="w-full bg-primary-container text-on-primary-container font-title-sm text-title-sm py-2 px-4 rounded-lg flex items-center justify-center gap-2 hover:bg-primary transition-colors shadow-sm" style="color:aliceblue;">
+                    <span class="material-symbols-outlined" data-icon="open_in_new">open_in_new</span>
+                    Siteyi Görüntüle
+                </a>
+            </div>
+        </section>
+    </div>
+</div>
+<section class="bg-surface border border-outline-variant rounded-xl shadow-smoked overflow-hidden flex flex-col mt-lg">
+    <div class="px-lg py-md border-b border-outline-variant flex justify-between items-center bg-surface-container-lowest">
+        <h2 class="font-display-sm text-display-sm text-on-background">Son Mesajlar</h2>
+        <a href="/UserMessage/Index/" class="btn btn-outline-primary">Tümünü Gör</a>
+    </div>
+    <div class="overflow-x-auto">
+        @await Component.InvokeAsync("_AdminDashboardRecentMessages")
+    </div>
+</section>

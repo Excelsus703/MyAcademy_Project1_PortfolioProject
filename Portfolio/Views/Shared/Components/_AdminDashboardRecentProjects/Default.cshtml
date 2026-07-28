@@ -1,0 +1,37 @@
+﻿@model List<Project>
+@*
+    Dashboard Recent Projects Info
+*@
+
+<table class="w-full text-left border-collapse">
+    <thead>
+        <tr class="bg-surface-container-low font-label-caps text-label-caps text-on-surface-variant border-b border-outline-variant">
+            <th class="px-lg py-3 font-semibold tracking-wider">GÖRSEL</th>
+            <th class="px-lg py-3 font-semibold tracking-wider">PROJE ADI</th>
+            <th class="px-lg py-3 font-semibold tracking-wider">AÇIKLAMA</th>
+            <th class="px-lg py-3 font-semibold tracking-wider">DURUM</th>
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tbody class="font-body-md text-body-md text-on-surface">
+            <tr class="border-b border-outline-variant hover:bg-surface-container-low transition-colors group">
+                <td class="px-lg py-4 font-semibold"><img style="width:40px; height:40px;" src="@item.ImageUrl" /></td>
+                <td class="px-lg py-4 text-on-surface-variant">@item.Name</td>
+                <td class="px-lg py-4 text-on-surface-variant">@item.Description</td>
+                @if (item.IsDone == true)
+                {
+                    <td class="px-lg py-4">
+                        <span class="inline-flex items-center px-2 py-1 rounded-full bg-[#e6f4ea] text-[#137333] font-label-caps text-label-caps">Tamamlandı</span>
+                    </td>
+                }
+                else
+                {
+                    <td class="px-lg py-4">
+                        <span class="inline-flex items-center px-2 py-1 rounded-full bg-[#fef7e0] text-[#b06000] font-label-caps text-label-caps">Geliştiriliyor</span>
+                    </td>
+                }
+            </tr>
+        </tbody>
+    }
+</table>

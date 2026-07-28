@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Projelerim - Portfolio Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#0053db",
+                        "tertiary-fixed": "#d3e4fe",
+                        "outline": "#737686",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-highest": "#e0e3e5",
+                        "background": "#f7f9fb",
+                        "secondary": "#565e74",
+                        "secondary-container": "#dae2fd",
+                        "error": "#ba1a1a",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "on-tertiary-fixed": "#0b1c30",
+                        "tertiary-container": "#5e6e85",
+                        "on-secondary": "#ffffff",
+                        "surface-bright": "#f7f9fb",
+                        "on-primary-fixed": "#00174b",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "on-secondary-container": "#5c647a",
+                        "on-primary-container": "#eeefff",
+                        "surface-variant": "#e0e3e5",
+                        "surface": "#f7f9fb",
+                        "on-primary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed": "#131b2e",
+                        "surface-dim": "#d8dadc",
+                        "on-background": "#191c1e",
+                        "primary-fixed": "#dbe1ff",
+                        "surface-container": "#eceef0",
+                        "on-surface-variant": "#434655",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "inverse-surface": "#2d3133",
+                        "primary": "#004ac6",
+                        "secondary-fixed": "#dae2fd",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#b7c8e1",
+                        "outline-variant": "#c3c6d7",
+                        "on-tertiary-container": "#e9f0ff",
+                        "surface-container-low": "#f2f4f6",
+                        "tertiary": "#46566c",
+                        "inverse-primary": "#b4c5ff",
+                        "on-tertiary-fixed-variant": "#38485d",
+                        "primary-container": "#2563eb",
+                        "on-surface": "#191c1e",
+                        "surface-container-high": "#e6e8ea",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "1.5rem",
+                        "header-height": "64px",
+                        "sidebar-width": "260px",
+                        "stack-md": "1rem",
+                        "stack-lg": "2rem",
+                        "stack-sm": "0.5rem",
+                        "container-padding": "2rem"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex">
+<!-- SideNavBar -->
+<nav class="fixed left-0 top-0 h-screen w-[260px] bg-secondary-fixed dark:bg-on-secondary-fixed z-20 flex flex-col py-stack-lg">
+<div class="px-gutter mb-stack-lg flex flex-col items-center">
+<img alt="Admin Avatar" class="w-16 h-16 rounded-full mb-stack-sm object-cover" data-alt="A professional high-resolution avatar of a system administrator in a modern light-mode interface setting, professional lighting, clean background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDD1RfuJCMEaFq4Jsm_iVN038GO8VqbM_0tl5wHE7-HOVSr9p8ciMImmGsnIYsrKDvrL1P7etXBC-H5Fa7YbFk-Y5hPtu-WOrhlBeacITIbxH6EFFf2gwDsUyjfqNBm7QI2DaZjB8-qB-LI59Sjb5lN8aZON1MlJAvGizD2MqZT4EpLtuz-6bBr-iGmba4SSGnWADmyDg_ZD6GQgkSF5oUYmY6WuXBM8x9oFujHxNCpk3yDnEat597ncuSOZTc0UidoGXg0YEogE8E"/>
+<h1 class="font-headline-md text-headline-md font-bold text-on-secondary-fixed dark:text-primary-fixed">Portfolio CMS</h1>
+<p class="font-body-md text-body-md text-on-secondary-fixed-variant">System Administrator</p>
+</div>
+<ul class="flex flex-col flex-grow gap-2 px-stack-md overflow-y-auto">
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-secondary-fixed-variant dark:text-on-secondary-fixed-variant hover:bg-on-secondary-fixed-variant/10 transition-colors font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">dashboard</span>
+                    Dashboard
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-secondary-fixed-variant dark:text-on-secondary-fixed-variant hover:bg-on-secondary-fixed-variant/10 transition-colors font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">image</span>
+                    Banner / Hero
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg border-l-[3px] border-primary bg-surface-variant/10 text-primary dark:text-primary-fixed font-semibold font-body-md text-body-md transition-all duration-200 ease-in-out hover:bg-on-secondary-fixed-variant/10" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">folder_special</span>
+                    Projelerim
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-secondary-fixed-variant dark:text-on-secondary-fixed-variant hover:bg-on-secondary-fixed-variant/10 transition-colors font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">code</span>
+                    Proje Teknolojileri
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-secondary-fixed-variant dark:text-on-secondary-fixed-variant hover:bg-on-secondary-fixed-variant/10 transition-colors font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">star</span>
+                    Yeteneklerim
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-secondary-fixed-variant dark:text-on-secondary-fixed-variant hover:bg-on-secondary-fixed-variant/10 transition-colors font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">person</span>
+                    Hakkımda
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-secondary-fixed-variant dark:text-on-secondary-fixed-variant hover:bg-on-secondary-fixed-variant/10 transition-colors font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">school</span>
+                    Eğitimlerim
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-secondary-fixed-variant dark:text-on-secondary-fixed-variant hover:bg-on-secondary-fixed-variant/10 transition-colors font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">work</span>
+                    İş Deneyimlerim
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-secondary-fixed-variant dark:text-on-secondary-fixed-variant hover:bg-on-secondary-fixed-variant/10 transition-colors font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">handshake</span>
+                    Hizmetlerim
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-secondary-fixed-variant dark:text-on-secondary-fixed-variant hover:bg-on-secondary-fixed-variant/10 transition-colors font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">format_quote</span>
+                    Hakkımda Söylenenler
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-secondary-fixed-variant dark:text-on-secondary-fixed-variant hover:bg-on-secondary-fixed-variant/10 transition-colors font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">mail</span>
+                    Gelen Mesajlar
+                </a>
+</li>
+</ul>
+</nav>
+<!-- Main Content Wrapper -->
+<div class="flex-grow ml-[260px] flex flex-col min-h-screen">
+<!-- TopNavBar -->
+<header class="fixed top-0 h-header-height z-10 bg-surface dark:bg-on-background border-b border-outline-variant dark:border-outline shadow-sm flex justify-between items-center w-full px-gutter ml-[260px] max-w-[calc(100%-260px)]">
+<div class="flex items-center gap-4">
+<span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">Portfolio Admin</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative focus-within:ring-2 focus-within:ring-primary/15 rounded-full transition-all duration-200">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant" style="font-variation-settings: 'FILL' 0;">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-low border border-outline-variant rounded-full text-body-md font-body-md focus:outline-none focus:border-primary" placeholder="Ara..." type="text"/>
+</div>
+<button class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">notifications</span>
+</button>
+<button class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">settings</span>
+</button>
+<img alt="User Profile" class="w-8 h-8 rounded-full border border-outline-variant object-cover" data-alt="Small circular user profile thumbnail for an administrator, light corporate aesthetic, high contrast." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCml9Als2xc_GNdNl6W81za1XdBaBQZKqOB1tMlFpdZjex3CAGIiFq4mwg37qfqJPJHtdczRoKdYi8f-nEcxEjdFfGt02LN1JsJF6Z3X-TQaWWRMK4aLVp0bjiIDYWuCAXqlBQiSDMitcZEBtYQgHSOm1QJFUi3Sytv25-9lN24F1x8VK5ceCyuixUZ5DLX1QPy33O36ytroWGIbYIKCEW1-i8ghnFoicKS_2Vza_FuhiX_dRA-z-RrTciKI9UjMwXuFNymfjOkKxM"/>
+</div>
+</header>
+<!-- Workspace Canvas -->
+<main class="mt-header-height p-container-padding flex-grow flex flex-col gap-stack-lg bg-background">
+<!-- Page Header -->
+<div class="flex justify-between items-center">
+<div>
+<h2 class="font-headline-xl text-headline-xl text-on-background mb-1">Projelerim</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Portfolyonuzdaki tüm projeleri buradan yönetebilirsiniz.</p>
+</div>
+<button class="bg-primary-container text-on-primary font-label-md text-label-md px-6 py-3 rounded-lg flex items-center gap-2 hover:bg-primary transition-colors shadow-sm">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">add</span>
+                    YENİ PROJE EKLE
+                </button>
+</div>
+<!-- Data Table Card -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/50 shadow-sm overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant/50">
+<th class="py-4 px-6 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Görsel</th>
+<th class="py-4 px-6 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Proje Adı</th>
+<th class="py-4 px-6 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Kategori</th>
+<th class="py-4 px-6 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Teknolojiler</th>
+<th class="py-4 px-6 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Durum</th>
+<th class="py-4 px-6 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider text-right">İşlemler</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md text-on-background">
+<!-- Row 1 -->
+<tr class="border-b border-outline-variant/30 hover:bg-surface-container-low/50 transition-colors group">
+<td class="py-3 px-6">
+<div class="w-16 h-12 rounded bg-surface-container-highest overflow-hidden">
+<img alt="Project 1" class="w-full h-full object-cover" data-alt="Thumbnail of a modern e-commerce dashboard interface, sleek web design, light mode palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCihvuY_UxzIl5YrD_cDRW2MyPAeqhvBl17wAWx7Z6GVapvbHr6iCZ4_Nqgx-kOOqjN_MO31HRMNdNadyVs2XN8e5QZ4oto1fkMq-R6scljRDxV6M_K-zhFrzbqqQ1fzkmeooyZeXA_IgDI_5w9cxmrVMzn4uAQICclER8by4eK7uN2Mh6xV9SZ8VNFf0GlcrsSYo16PDWfNoEhuZFm0mfs1Ku9WKePOeHSyVApqaD7xpo5bOCYJhGvkMTzgHUtwMN-AgPO2HBo184"/>
+</div>
+</td>
+<td class="py-3 px-6 font-semibold">E-Ticaret Yönetim Paneli</td>
+<td class="py-3 px-6 text-on-surface-variant">Web Geliştirme</td>
+<td class="py-3 px-6">
+<div class="flex gap-1 flex-wrap">
+<span class="px-2 py-1 bg-secondary-container text-on-secondary-container rounded text-xs font-medium">React</span>
+<span class="px-2 py-1 bg-secondary-container text-on-secondary-container rounded text-xs font-medium">Tailwind</span>
+</div>
+</td>
+<td class="py-3 px-6">
+<span class="inline-flex items-center gap-1.5 py-1 px-2.5 rounded-full text-xs font-medium bg-[#ecfdf5] text-[#065f46]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#10b981]"></span> Published
+                                    </span>
+</td>
+<td class="py-3 px-6 text-right">
+<button class="text-tertiary hover:text-primary transition-colors p-2" title="Düzenle">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 0;">edit</span>
+</button>
+<button class="text-error/80 hover:text-error transition-colors p-2" title="Sil">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 0;">delete</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="border-b border-outline-variant/30 hover:bg-surface-container-low/50 transition-colors group">
+<td class="py-3 px-6">
+<div class="w-16 h-12 rounded bg-surface-container-highest overflow-hidden">
+<img alt="Project 2" class="w-full h-full object-cover" data-alt="Thumbnail of a minimalist portfolio website design featuring bold typography and clean layout, soft ambient lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBu2m-eWkf1X03pg1_FMbnMEmyzES7MIbIg3WVrNqFFY8pNjizcgv_xp8pVWjtEQZwNcaFUqAIgCP9PEzOFDm2FgdqjVhLLP1nzcmUhCr9Fz6B-YjbZR-Dz8YhMYbzXmSdUMjiD4yOUnhF_V-iqHwrdvhvwN7xn2km-T9VYYK_2u0rbeWUJs3xsCJcLijc833kOqiXWUH8AboanbR3coOacAhff-TNGcGTMrdbrItiea149XCXU-Si0pmDHNBlJGLLQ7KvOUUec3tA"/>
+</div>
+</td>
+<td class="py-3 px-6 font-semibold">Kişisel Portfolyo V2</td>
+<td class="py-3 px-6 text-on-surface-variant">UI/UX Tasarım</td>
+<td class="py-3 px-6">
+<div class="flex gap-1 flex-wrap">
+<span class="px-2 py-1 bg-secondary-container text-on-secondary-container rounded text-xs font-medium">Figma</span>
+<span class="px-2 py-1 bg-secondary-container text-on-secondary-container rounded text-xs font-medium">Framer</span>
+</div>
+</td>
+<td class="py-3 px-6">
+<span class="inline-flex items-center gap-1.5 py-1 px-2.5 rounded-full text-xs font-medium bg-[#fef3c7] text-[#92400e]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#f59e0b]"></span> Draft
+                                    </span>
+</td>
+<td class="py-3 px-6 text-right">
+<button class="text-tertiary hover:text-primary transition-colors p-2" title="Düzenle">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 0;">edit</span>
+</button>
+<button class="text-error/80 hover:text-error transition-colors p-2" title="Sil">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 0;">delete</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="py-3 px-6">
+<div class="w-16 h-12 rounded bg-surface-container-highest overflow-hidden flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary opacity-50" style="font-variation-settings: 'FILL' 0;">image</span>
+</div>
+</td>
+<td class="py-3 px-6 font-semibold">Kurumsal Blog Sistemi</td>
+<td class="py-3 px-6 text-on-surface-variant">Backend API</td>
+<td class="py-3 px-6">
+<div class="flex gap-1 flex-wrap">
+<span class="px-2 py-1 bg-secondary-container text-on-secondary-container rounded text-xs font-medium">Node.js</span>
+<span class="px-2 py-1 bg-secondary-container text-on-secondary-container rounded text-xs font-medium">MongoDB</span>
+</div>
+</td>
+<td class="py-3 px-6">
+<span class="inline-flex items-center gap-1.5 py-1 px-2.5 rounded-full text-xs font-medium bg-[#f1f5f9] text-[#475569]">
+<span class="w-1.5 h-1.5 rounded-full bg-[#94a3b8]"></span> Pending
+                                    </span>
+</td>
+<td class="py-3 px-6 text-right">
+<button class="text-tertiary hover:text-primary transition-colors p-2" title="Düzenle">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 0;">edit</span>
+</button>
+<button class="text-error/80 hover:text-error transition-colors p-2" title="Sil">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 0;">delete</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination Footer -->
+<div class="px-6 py-4 border-t border-outline-variant/50 bg-surface-container-lowest flex items-center justify-between">
+<span class="font-body-md text-body-md text-on-surface-variant">Toplam 3 proje gösteriliyor</span>
+<div class="flex gap-2">
+<button class="px-3 py-1 border border-outline-variant rounded text-on-surface-variant hover:bg-surface-container-low transition-colors disabled:opacity-50" disabled="">Önceki</button>
+<button class="px-3 py-1 border border-outline-variant rounded text-on-surface-variant hover:bg-surface-container-low transition-colors">Sonraki</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Yeteneklerim - Portfolio Admin</title>
+    <!-- Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Tailwind Config -->
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#0053db",
+                        "tertiary-fixed": "#d3e4fe",
+                        "outline": "#737686",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-highest": "#e0e3e5",
+                        "background": "#f7f9fb",
+                        "secondary": "#565e74",
+                        "secondary-container": "#dae2fd",
+                        "error": "#ba1a1a",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "on-tertiary-fixed": "#0b1c30",
+                        "tertiary-container": "#5e6e85",
+                        "on-secondary": "#ffffff",
+                        "surface-bright": "#f7f9fb",
+                        "on-primary-fixed": "#00174b",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "on-secondary-container": "#5c647a",
+                        "on-primary-container": "#eeefff",
+                        "surface-variant": "#e0e3e5",
+                        "surface": "#f7f9fb",
+                        "on-primary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed": "#131b2e",
+                        "surface-dim": "#d8dadc",
+                        "on-background": "#191c1e",
+                        "primary-fixed": "#dbe1ff",
+                        "surface-container": "#eceef0",
+                        "on-surface-variant": "#434655",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "inverse-surface": "#2d3133",
+                        "primary": "#004ac6",
+                        "secondary-fixed": "#dae2fd",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#b7c8e1",
+                        "outline-variant": "#c3c6d7",
+                        "on-tertiary-container": "#e9f0ff",
+                        "surface-container-low": "#f2f4f6",
+                        "tertiary": "#46566c",
+                        "inverse-primary": "#b4c5ff",
+                        "on-tertiary-fixed-variant": "#38485d",
+                        "primary-container": "#2563eb",
+                        "on-surface": "#191c1e",
+                        "surface-container-high": "#e6e8ea",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "1.5rem",
+                        "header-height": "64px",
+                        "sidebar-width": "260px",
+                        "stack-md": "1rem",
+                        "stack-lg": "2rem",
+                        "stack-sm": "0.5rem",
+                        "container-padding": "2rem"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md h-screen overflow-hidden flex">
+    <!-- Shared Component: SideNavBar -->
+    <nav class="fixed left-0 top-0 h-screen w-[260px] bg-secondary-fixed flex flex-col py-stack-lg z-20">
+        <div class="px-gutter mb-8">
+            <h1 class="font-headline-md text-headline-md font-bold text-on-secondary-fixed">Portfolio CMS</h1>
+            <p class="font-body-md text-body-md text-on-secondary-fixed-variant opacity-80 mt-1">System Administrator</p>
+        </div>
+        <ul class="flex-1 overflow-y-auto px-4 space-y-1">
+            <!-- Inactive -->
+            <li><a class="flex items-center px-4 py-3 rounded-lg text-on-secondary-fixed-variant hover:bg-on-secondary-fixed-variant/5 transition-all duration-200 ease-in-out font-body-md text-body-md" href="#"><span class="material-symbols-outlined mr-3 text-[20px]">dashboard</span>Dashboard</a></li>
+            <li><a class="flex items-center px-4 py-3 rounded-lg text-on-secondary-fixed-variant hover:bg-on-secondary-fixed-variant/5 transition-all duration-200 ease-in-out font-body-md text-body-md" href="#"><span class="material-symbols-outlined mr-3 text-[20px]">image</span>Banner / Hero</a></li>
+            <li><a class="flex items-center px-4 py-3 rounded-lg text-on-secondary-fixed-variant hover:bg-on-secondary-fixed-variant/5 transition-all duration-200 ease-in-out font-body-md text-body-md" href="#"><span class="material-symbols-outlined mr-3 text-[20px]">folder_special</span>Projelerim</a></li>
+            <li><a class="flex items-center px-4 py-3 rounded-lg text-on-secondary-fixed-variant hover:bg-on-secondary-fixed-variant/5 transition-all duration-200 ease-in-out font-body-md text-body-md" href="#"><span class="material-symbols-outlined mr-3 text-[20px]">code</span>Proje Teknolojileri</a></li>
+            <!-- Active: Yeteneklerim -->
+            <li>
+                <a class="flex items-center px-4 py-3 rounded-r-lg border-l-[3px] border-primary bg-surface-variant/10 text-primary font-semibold transition-all duration-200 ease-in-out font-body-md text-body-md" href="#">
+                    <span class="material-symbols-outlined mr-3 text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                    Yeteneklerim
+                </a>
+            </li>
+            <!-- Inactive -->
+            <li><a class="flex items-center px-4 py-3 rounded-lg text-on-secondary-fixed-variant hover:bg-on-secondary-fixed-variant/5 transition-all duration-200 ease-in-out font-body-md text-body-md" href="#"><span class="material-symbols-outlined mr-3 text-[20px]">person</span>Hakkımda</a></li>
+            <li><a class="flex items-center px-4 py-3 rounded-lg text-on-secondary-fixed-variant hover:bg-on-secondary-fixed-variant/5 transition-all duration-200 ease-in-out font-body-md text-body-md" href="#"><span class="material-symbols-outlined mr-3 text-[20px]">school</span>Eğitimlerim</a></li>
+            <li><a class="flex items-center px-4 py-3 rounded-lg text-on-secondary-fixed-variant hover:bg-on-secondary-fixed-variant/5 transition-all duration-200 ease-in-out font-body-md text-body-md" href="#"><span class="material-symbols-outlined mr-3 text-[20px]">work</span>İş Deneyimlerim</a></li>
+            <li><a class="flex items-center px-4 py-3 rounded-lg text-on-secondary-fixed-variant hover:bg-on-secondary-fixed-variant/5 transition-all duration-200 ease-in-out font-body-md text-body-md" href="#"><span class="material-symbols-outlined mr-3 text-[20px]">handshake</span>Hizmetlerim</a></li>
+            <li><a class="flex items-center px-4 py-3 rounded-lg text-on-secondary-fixed-variant hover:bg-on-secondary-fixed-variant/5 transition-all duration-200 ease-in-out font-body-md text-body-md" href="#"><span class="material-symbols-outlined mr-3 text-[20px]">format_quote</span>Hakkımda Söylenenler</a></li>
+            <li><a class="flex items-center px-4 py-3 rounded-lg text-on-secondary-fixed-variant hover:bg-on-secondary-fixed-variant/5 transition-all duration-200 ease-in-out font-body-md text-body-md" href="#"><span class="material-symbols-outlined mr-3 text-[20px]">mail</span>Gelen Mesajlar</a></li>
+        </ul>
+    </nav>
+    <!-- Main Workspace -->
+    <main class="ml-[260px] flex-1 flex flex-col h-screen overflow-hidden relative">
+        <!-- Shared Component: TopNavBar -->
+        <header class="flex justify-between items-center w-full px-gutter h-header-height bg-surface border-b border-outline-variant shadow-sm z-10 shrink-0">
+            <div class="flex items-center text-primary font-headline-md text-headline-md font-bold">
+                Portfolio Admin
+            </div>
+            <div class="flex items-center gap-4">
+                <button class="p-2 text-secondary hover:text-primary transition-colors focus-within:ring-2 focus-within:ring-primary/15 rounded-full">
+                    <span class="material-symbols-outlined">notifications</span>
+                </button>
+                <button class="p-2 text-secondary hover:text-primary transition-colors focus-within:ring-2 focus-within:ring-primary/15 rounded-full">
+                    <span class="material-symbols-outlined">settings</span>
+                </button>
+                <div class="h-8 w-8 rounded-full bg-surface-variant overflow-hidden border border-outline-variant ml-2">
+                    <img alt="User Profile" class="w-full h-full object-cover" data-alt="A small circular profile picture placeholder showing a generic silhouette or professional headshot for an admin user in a modern SaaS interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAC_5px_KP1YYSibdfYM2cVwOmP7QVSF5A7qL7z-wFUFB_SLW4YL_AWW99__t2gc6k563SJs8wxxutHjt_lDVGU7vIL22FbnxicZW0v1dqhJuPIPyYErH5wdBXA3QI-qdc4tu0nca7QOXTO_61OumG6ge-baMYvGdyNRis6kkY27gqiFFfnxNyBd5zOKu312pDBMi7J__BsW_qIksVzIecuQ7u1XRMdRYFMHflrTGDPIlTMFuYQnaO1tp7IYoafMDkSc8VHrRLi-Cs" />
+                </div>
+            </div>
+        </header>
+        <!-- Page Content -->
+        <div class="flex-1 overflow-y-auto p-container-padding">
+            <div class="flex justify-between items-center mb-8">
+                <div>
+                    <h2 class="font-headline-xl text-headline-xl text-on-surface">Yeteneklerim</h2>
+                    <p class="font-body-lg text-body-lg text-secondary mt-1">Teknik becerilerinizi ve yetkinlik seviyelerinizi yönetin.</p>
+                </div>
+                <button class="bg-primary-container text-white px-4 py-2 rounded-lg font-label-md text-label-md flex items-center gap-2 hover:bg-primary-container/90 transition-colors">
+                    <span class="material-symbols-outlined text-[18px]">add</span>
+                    Yeni Yetenek Ekle
+                </button>
+            </div>
+            <!-- Bento Grid Layout -->
+            <div class="grid grid-cols-12 gap-gutter">
+                <!-- Main List Area -->
+                <div class="col-span-12 lg:col-span-8 space-y-6">
+                    <!-- Category: Frontend -->
+                    <div class="bg-surface-container-lowest border border-outline-variant rounded-xl shadow-sm overflow-hidden">
+                        <div class="px-6 py-4 border-b border-outline-variant bg-surface-container-low flex justify-between items-center">
+                            <h3 class="font-headline-md text-headline-md text-on-surface flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary">web</span>
+                                Frontend
+                            </h3>
+                            <span class="font-label-md text-label-md text-secondary bg-surface-variant px-2 py-1 rounded-full">3 Yetenek</span>
+                        </div>
+                        <div class="p-0">
+                            <!-- Skill Item -->
+                            <div class="flex items-center px-6 py-4 border-b border-outline-variant hover:bg-surface-bright transition-colors group">
+                                <div class="w-10 h-10 rounded-lg bg-secondary-container flex items-center justify-center text-primary font-bold mr-4 shrink-0">JS</div>
+                                <div class="flex-1">
+                                    <div class="flex justify-between mb-1">
+                                        <span class="font-body-md text-body-md font-semibold text-on-surface">JavaScript (ES6+)</span>
+                                        <span class="font-label-md text-label-md text-secondary">90%</span>
+                                    </div>
+                                    <div class="w-full h-2 bg-surface-variant rounded-full overflow-hidden">
+                                        <div class="h-full bg-primary rounded-full" style="width: 90%;"></div>
+                                    </div>
+                                </div>
+                                <div class="ml-6 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <button class="p-1.5 text-secondary hover:text-primary bg-surface-container rounded-md"><span class="material-symbols-outlined text-[18px]">edit</span></button>
+                                    <button class="p-1.5 text-secondary hover:text-error bg-surface-container rounded-md"><span class="material-symbols-outlined text-[18px]">delete</span></button>
+                                </div>
+                            </div>
+                            <!-- Skill Item -->
+                            <div class="flex items-center px-6 py-4 border-b border-outline-variant hover:bg-surface-bright transition-colors group">
+                                <div class="w-10 h-10 rounded-lg bg-secondary-container flex items-center justify-center text-primary font-bold mr-4 shrink-0">RE</div>
+                                <div class="flex-1">
+                                    <div class="flex justify-between mb-1">
+                                        <span class="font-body-md text-body-md font-semibold text-on-surface">React & Next.js</span>
+                                        <span class="font-label-md text-label-md text-secondary">85%</span>
+                                    </div>
+                                    <div class="w-full h-2 bg-surface-variant rounded-full overflow-hidden">
+                                        <div class="h-full bg-primary rounded-full" style="width: 85%;"></div>
+                                    </div>
+                                </div>
+                                <div class="ml-6 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <button class="p-1.5 text-secondary hover:text-primary bg-surface-container rounded-md"><span class="material-symbols-outlined text-[18px]">edit</span></button>
+                                    <button class="p-1.5 text-secondary hover:text-error bg-surface-container rounded-md"><span class="material-symbols-outlined text-[18px]">delete</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Category: Backend -->
+                    <div class="bg-surface-container-lowest border border-outline-variant rounded-xl shadow-sm overflow-hidden">
+                        <div class="px-6 py-4 border-b border-outline-variant bg-surface-container-low flex justify-between items-center">
+                            <h3 class="font-headline-md text-headline-md text-on-surface flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary">dns</span>
+                                Backend & Veritabanı
+                            </h3>
+                            <span class="font-label-md text-label-md text-secondary bg-surface-variant px-2 py-1 rounded-full">2 Yetenek</span>
+                        </div>
+                        <div class="p-0">
+                            <!-- Skill Item -->
+                            <div class="flex items-center px-6 py-4 border-b border-outline-variant hover:bg-surface-bright transition-colors group">
+                                <div class="w-10 h-10 rounded-lg bg-secondary-container flex items-center justify-center text-primary font-bold mr-4 shrink-0">ND</div>
+                                <div class="flex-1">
+                                    <div class="flex justify-between mb-1">
+                                        <span class="font-body-md text-body-md font-semibold text-on-surface">Node.js / Express</span>
+                                        <span class="font-label-md text-label-md text-secondary">75%</span>
+                                    </div>
+                                    <div class="w-full h-2 bg-surface-variant rounded-full overflow-hidden">
+                                        <div class="h-full bg-primary rounded-full" style="width: 75%;"></div>
+                                    </div>
+                                </div>
+                                <div class="ml-6 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <button class="p-1.5 text-secondary hover:text-primary bg-surface-container rounded-md"><span class="material-symbols-outlined text-[18px]">edit</span></button>
+                                    <button class="p-1.5 text-secondary hover:text-error bg-surface-container rounded-md"><span class="material-symbols-outlined text-[18px]">delete</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Side Panel / Quick Add -->
+                <div class="col-span-12 lg:col-span-4 space-y-6">
+                    <div class="bg-surface-container-lowest border border-outline-variant rounded-xl shadow-sm p-6">
+                        <h3 class="font-headline-md text-headline-md text-on-surface mb-4">Hızlı Ekle</h3>
+                        <form class="space-y-4">
+                            <div>
+                                <label class="block font-label-md text-label-md text-secondary mb-1">Yetenek Adı</label>
+                                <input class="w-full border border-outline-variant rounded-lg px-3 py-2 font-body-md text-body-md focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/15 transition-all" placeholder="Örn: TypeScript" type="text" />
+                            </div>
+                            <div>
+                                <label class="block font-label-md text-label-md text-secondary mb-1">Kategori</label>
+                                <select class="w-full border border-outline-variant rounded-lg px-3 py-2 font-body-md text-body-md focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/15 transition-all text-on-surface bg-white">
+                                    <option>Frontend</option>
+                                    <option>Backend</option>
+                                    <option>Tasarım</option>
+                                    <option>Araçlar</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block font-label-md text-label-md text-secondary mb-1 flex justify-between">
+                                    <span>Seviye (%)</span>
+                                    <span class="text-primary font-bold" id="rangeVal">50</span>
+                                </label>
+                                <input class="w-full accent-primary" max="100" min="0" oninput="document.getElementById('rangeVal').innerText = this.value" type="range" value="50" />
+                            </div>
+                            <button class="w-full bg-surface-container-high border border-outline-variant text-on-surface hover:bg-surface-variant px-4 py-2 rounded-lg font-label-md text-label-md mt-2 transition-colors" type="button">
+                                Kaydet
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

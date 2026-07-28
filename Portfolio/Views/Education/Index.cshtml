@@ -1,0 +1,53 @@
+﻿@model List<Education>
+@{
+    ViewData["Title"] = "Eğitim Bilgileri";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<table class="table table-hover table-bordered">
+    <tr>
+        <th>Okul Adı</th>
+        <th>Bölüm Adı</th>
+        <th>Genel Not Ortalaması</th>
+        <th>Başlangıç Yılı</th>
+        <th>Mezuniyet Yılı</th>
+        <th>Açıklama</th>
+        <th>İşlemler</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.SchoolName</td>
+            <td>@item.Department</td>
+            <td>@item.GPA</td>
+            <td>@item.StartYear</td>
+            <td>@item.GraduationYear</td>
+            <td>@item.Description</td>
+            <td>
+                <a href="#" onclick="deleteEducation(@item.Id)" class="btn btn-outline-danger">Sil</a>
+                <a href="/Education/EditEducation/@item.Id" class="btn btn-outline-info">Güncelle</a>
+            </td>
+        </tr>
+    }
+</table>
+<br />
+<a href="/Education/NewEducation/" class="btn btn-outline-primary">Yeni Eğitim Bilgisi Ekle</a>
+
+<script>
+    function deleteEducation(id){
+            Swal.fire({
+      title: "Silmek İstediğinize Emin misiniz?",
+      text: "Bu İşlemi Geri Alamazsınız!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Evet, Sil!",
+      cancelButtonText: "İptal"
+    }).then((result) => {
+      if (result.isConfirmed){
+          window.location.href = "/Education/DeleteEducation/" + id;
+      }
+    });
+    }
+</script>

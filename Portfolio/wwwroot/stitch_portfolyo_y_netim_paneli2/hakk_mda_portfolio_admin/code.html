@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Portfolio Admin - Hakkımda</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary-fixed-dim": "#c0c1ff",
+                      "on-primary-fixed-variant": "#2f2ebe",
+                      "on-error-container": "#93000a",
+                      "on-secondary-fixed": "#131b2e",
+                      "primary-fixed": "#e1e0ff",
+                      "primary-container": "#6063ee",
+                      "primary": "#4648d4",
+                      "error-container": "#ffdad6",
+                      "tertiary-container": "#727577",
+                      "tertiary-fixed-dim": "#c4c7c9",
+                      "secondary-fixed-dim": "#bec6e0",
+                      "on-primary-container": "#fffbff",
+                      "surface-container-highest": "#d3e4fe",
+                      "inverse-surface": "#213145",
+                      "surface-container-lowest": "#ffffff",
+                      "tertiary": "#595c5e",
+                      "on-tertiary-container": "#fbfdff",
+                      "inverse-on-surface": "#eaf1ff",
+                      "surface-dim": "#cbdbf5",
+                      "inverse-primary": "#c0c1ff",
+                      "secondary-container": "#dae2fd",
+                      "on-background": "#0b1c30",
+                      "on-primary-fixed": "#07006c",
+                      "tertiary-fixed": "#e0e3e5",
+                      "on-surface": "#0b1c30",
+                      "background": "#f8f9ff",
+                      "secondary-fixed": "#dae2fd",
+                      "on-error": "#ffffff",
+                      "on-secondary": "#ffffff",
+                      "surface": "#f8f9ff",
+                      "surface-bright": "#f8f9ff",
+                      "surface-container-high": "#dce9ff",
+                      "outline": "#767586",
+                      "surface-tint": "#494bd6",
+                      "on-tertiary-fixed-variant": "#444749",
+                      "surface-container": "#e5eeff",
+                      "secondary": "#565e74",
+                      "on-secondary-container": "#5c647a",
+                      "surface-variant": "#d3e4fe",
+                      "error": "#ba1a1a",
+                      "outline-variant": "#c7c4d7",
+                      "surface-container-low": "#eff4ff",
+                      "on-surface-variant": "#464554",
+                      "on-primary": "#ffffff",
+                      "on-tertiary-fixed": "#191c1e",
+                      "on-secondary-fixed-variant": "#3f465c",
+                      "on-tertiary": "#ffffff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "margin-mobile": "16px",
+                      "stack-sm": "8px",
+                      "sidebar-width": "280px",
+                      "gutter": "24px",
+                      "margin-desktop": "32px",
+                      "stack-md": "16px",
+                      "stack-lg": "24px",
+                      "container-max": "1440px"
+              },
+              "fontFamily": {
+                      "display-sm": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "headline-lg-mobile": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Inter"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "headline-lg": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "display-sm": [
+                              "30px",
+                              {
+                                      "lineHeight": "38px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-md": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-lg": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen">
+<!-- SideNavBar -->
+<nav class="fixed left-0 top-0 h-screen w-sidebar-width bg-secondary dark:bg-secondary-fixed-dim hidden md:flex flex-col py-stack-lg z-50">
+<div class="px-margin-desktop mb-8">
+<h1 class="font-headline-lg text-headline-lg font-bold text-on-primary dark:text-on-primary-fixed">Portfolio Admin</h1>
+<p class="font-label-md text-label-md text-on-primary/70 mt-1">Command Center</p>
+</div>
+<div class="flex-1 overflow-y-auto">
+<ul class="space-y-1">
+<li>
+<a class="flex items-center gap-stack-md px-stack-md py-stack-sm text-on-primary/60 hover:text-on-primary hover:bg-on-primary/10 transition-all scale-98 active:opacity-80" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-stack-md px-stack-md py-stack-sm text-on-primary/60 hover:text-on-primary hover:bg-on-primary/10 transition-all scale-98 active:opacity-80" href="#">
+<span class="material-symbols-outlined" data-icon="star">star</span>
+<span>Banner / Hero</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-stack-md px-stack-md py-stack-sm text-on-primary/60 hover:text-on-primary hover:bg-on-primary/10 transition-all scale-98 active:opacity-80" href="#">
+<span class="material-symbols-outlined" data-icon="folder_special">folder_special</span>
+<span>Projelerim</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-stack-md px-stack-md py-stack-sm text-on-primary/60 hover:text-on-primary hover:bg-on-primary/10 transition-all scale-98 active:opacity-80" href="#">
+<span class="material-symbols-outlined" data-icon="code">code</span>
+<span>Proje Teknolojileri</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-stack-md px-stack-md py-stack-sm text-on-primary/60 hover:text-on-primary hover:bg-on-primary/10 transition-all scale-98 active:opacity-80" href="#">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+<span>Yeteneklerim</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-stack-md px-stack-md py-stack-sm border-l-4 border-primary bg-on-primary/10 text-on-primary font-bold transition-all scale-98 active:opacity-80" href="#">
+<span class="material-symbols-outlined" data-icon="person" style="font-variation-settings: 'FILL' 1;">person</span>
+<span>Hakkımda</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-stack-md px-stack-md py-stack-sm text-on-primary/60 hover:text-on-primary hover:bg-on-primary/10 transition-all scale-98 active:opacity-80" href="#">
+<span class="material-symbols-outlined" data-icon="school">school</span>
+<span>Eğitimlerim</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-stack-md px-stack-md py-stack-sm text-on-primary/60 hover:text-on-primary hover:bg-on-primary/10 transition-all scale-98 active:opacity-80" href="#">
+<span class="material-symbols-outlined" data-icon="work">work</span>
+<span>İş Deneyimlerim</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-stack-md px-stack-md py-stack-sm text-on-primary/60 hover:text-on-primary hover:bg-on-primary/10 transition-all scale-98 active:opacity-80" href="#">
+<span class="material-symbols-outlined" data-icon="handshake">handshake</span>
+<span>Hizmetlerim</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-stack-md px-stack-md py-stack-sm text-on-primary/60 hover:text-on-primary hover:bg-on-primary/10 transition-all scale-98 active:opacity-80" href="#">
+<span class="material-symbols-outlined" data-icon="format_quote">format_quote</span>
+<span>Hakkımda Söylenenler</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-stack-md px-stack-md py-stack-sm text-on-primary/60 hover:text-on-primary hover:bg-on-primary/10 transition-all scale-98 active:opacity-80" href="#">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+<span>Gelen Mesajlar</span>
+</a>
+</li>
+</ul>
+</div>
+<div class="px-stack-md mt-auto pt-8 border-t border-on-primary/10">
+<a class="flex items-center gap-stack-md px-stack-md py-stack-sm text-on-primary/60 hover:text-on-primary hover:bg-on-primary/10 transition-all rounded" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span>Logout</span>
+</a>
+<div class="flex items-center gap-3 mt-4 px-stack-md">
+<img alt="Admin Avatar" class="w-10 h-10 rounded-full object-cover border border-outline/30" data-alt="A small, professional avatar photo of an administrator, clean lighting, corporate style, high quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpIaHiHre9n72OjzSUfGXVB5Ph6n613N0PkA5Pt5ib4WZSaInLSXWxU6nvPW1LTeaP4NUShFwJxlr6o5ZwsIoYhpF6T-rqSNBySab4zGkldgxYRnGilGbcFMiedqQrPHLd4LcAGKj0khKVVMJRTklOFkTooZQ3rvDOsror2KyUmVIe2x3XY-8LLNtma937CZe3DwkpiXTue2EqJHfc9_2n8rLO14I4MtyRj1Xi4pXlAm-YgY6vuUQWHQ4hYGX9W1-OzLS_FN1GV6k"/>
+<div class="text-sm">
+<p class="font-bold text-on-primary">Admin User</p>
+<p class="text-xs text-on-primary/60">admin@portfolio.com</p>
+</div>
+</div>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="md:ml-sidebar-width min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-surface-dim docked full-width top-0 sticky z-40 border-b border-outline-variant dark:border-outline flex justify-between items-center px-margin-desktop h-16">
+<div class="flex items-center gap-4">
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<span class="font-headline-md text-headline-md font-semibold text-on-surface dark:text-inverse-on-surface">Portfolio CMS</span>
+</div>
+<div class="flex-1 max-w-md mx-8 hidden md:block">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border border-outline-variant rounded-lg focus:border-primary focus:ring-1 focus:ring-primary text-body-md transition-colors" placeholder="Search..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-low rounded-full transition-colors active:opacity-70">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-low rounded-full transition-colors active:opacity-70">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-low rounded-full transition-colors active:opacity-70">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Page Canvas -->
+<main class="flex-1 p-margin-mobile md:p-margin-desktop max-w-container-max mx-auto w-full">
+<div class="flex justify-between items-end mb-8">
+<div>
+<h2 class="font-display-sm text-display-sm text-on-background">Hakkımda Düzenle</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-2">Kişisel biyografi ve iletişim bilgilerinizi yönetin.</p>
+</div>
+<div class="flex gap-4">
+<button class="px-6 py-2 rounded-lg font-label-md text-label-md border border-outline-variant text-on-surface-variant hover:bg-surface-container-low transition-colors">Vazgeç</button>
+<button class="px-6 py-2 rounded-lg font-label-md text-label-md bg-primary text-on-primary hover:bg-primary-container transition-colors shadow-sm">Değişiklikleri Kaydet</button>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+<!-- Left Column: Image & Quick Details -->
+<div class="lg:col-span-1 space-y-gutter">
+<!-- Profile Image Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6">
+<h3 class="font-headline-md text-headline-md mb-4 border-b border-outline-variant pb-2">Profil Fotoğrafı</h3>
+<div class="flex flex-col items-center">
+<div class="w-48 h-48 rounded-full border-4 border-surface-container-low overflow-hidden mb-4 relative group cursor-pointer">
+<img alt="Current Profile" class="w-full h-full object-cover" data-alt="A professional headshot of a creative individual in a modern studio setting, clean lighting, light background, corporate yet approachable style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgFY05kpZiRDkWu5urYCTazqyIDJ_MAmXSfsEbK_hxzGOF6pYQk-uvQdcG-m2AFj4lMnVhzHM5Ev-ejFtv_bDvW4K1bFGWvQ357FAQ68DudhQ880NXO45yj4XPPGkAGy1O8tKGtAN85vV0gRBwSV3fbiMBh2L7bnlysGF4Y341vMqpvIm-MK7act9-c2GQXAA2N86ehosVm1csuJksFmRwfmNnxUKCLQhFmW_7nt6mCahz29YLa8P86By46lORDvg326OcmQSRzmQ"/>
+<div class="absolute inset-0 bg-on-background/50 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-on-primary mb-1">photo_camera</span>
+<span class="font-label-md text-label-md text-on-primary">Değiştir</span>
+</div>
+</div>
+<p class="text-body-md text-on-surface-variant text-center mb-4">Önerilen boyut: 500x500px, Maksimum 2MB.</p>
+<button class="px-4 py-2 border border-outline-variant rounded-lg font-label-md text-label-md text-on-surface hover:bg-surface-container-low transition-colors w-full flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">upload</span>
+                                Yükle
+                            </button>
+</div>
+</div>
+<!-- Contact Details Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6">
+<h3 class="font-headline-md text-headline-md mb-4 border-b border-outline-variant pb-2">İletişim Bilgileri</h3>
+<div class="space-y-4">
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-1">Konum</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">location_on</span>
+<input class="w-full pl-10 pr-3 py-2 border border-outline-variant rounded-lg bg-surface focus:border-primary focus:ring-1 focus:ring-primary text-body-md" type="text" value="Istanbul, Turkey"/>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-1">E-posta</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">mail</span>
+<input class="w-full pl-10 pr-3 py-2 border border-outline-variant rounded-lg bg-surface focus:border-primary focus:ring-1 focus:ring-primary text-body-md" type="email" value="hello@portfolio.com"/>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-1">Telefon</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">call</span>
+<input class="w-full pl-10 pr-3 py-2 border border-outline-variant rounded-lg bg-surface focus:border-primary focus:ring-1 focus:ring-primary text-body-md" type="tel" value="+90 555 123 4567"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Rich Text & Social -->
+<div class="lg:col-span-2 space-y-gutter">
+<!-- Biography Editor -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl flex flex-col h-full min-h-[500px]">
+<div class="p-4 border-b border-outline-variant bg-surface-container-lowest rounded-t-xl">
+<h3 class="font-headline-md text-headline-md mb-2">Biyografi (Hakkımda)</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Kendinizi tanıtan ana metin. Ziyaretçileriniz ilk olarak burayı okuyacak.</p>
+</div>
+<!-- Pseudo Rich Text Toolbar -->
+<div class="px-4 py-2 border-b border-outline-variant bg-surface-container-low flex flex-wrap gap-2 items-center">
+<div class="flex border border-outline-variant rounded bg-surface">
+<button class="p-1 hover:bg-surface-variant text-on-surface"><span class="material-symbols-outlined text-[20px]">format_bold</span></button>
+<button class="p-1 hover:bg-surface-variant text-on-surface border-l border-outline-variant"><span class="material-symbols-outlined text-[20px]">format_italic</span></button>
+<button class="p-1 hover:bg-surface-variant text-on-surface border-l border-outline-variant"><span class="material-symbols-outlined text-[20px]">format_underlined</span></button>
+</div>
+<div class="h-6 w-px bg-outline-variant"></div>
+<div class="flex border border-outline-variant rounded bg-surface">
+<button class="p-1 hover:bg-surface-variant text-on-surface"><span class="material-symbols-outlined text-[20px]">format_list_bulleted</span></button>
+<button class="p-1 hover:bg-surface-variant text-on-surface border-l border-outline-variant"><span class="material-symbols-outlined text-[20px]">format_list_numbered</span></button>
+</div>
+<div class="h-6 w-px bg-outline-variant"></div>
+<button class="p-1 hover:bg-surface-variant text-on-surface border border-outline-variant rounded bg-surface"><span class="material-symbols-outlined text-[20px]">link</span></button>
+<button class="p-1 hover:bg-surface-variant text-on-surface border border-outline-variant rounded bg-surface"><span class="material-symbols-outlined text-[20px]">image</span></button>
+</div>
+<!-- Editor Area -->
+<div class="flex-1 p-4 bg-surface">
+<textarea class="w-full h-full min-h-[300px] bg-transparent border-none focus:ring-0 resize-none font-body-md text-body-md text-on-surface" placeholder="Biyografinizi buraya yazın...">Merhaba, ben profesyonel bir dijital ürün tasarımcısı ve geliştiricisiyim. 10 yılı aşkın süredir kullanıcı odaklı arayüzler tasarlıyor ve modern web teknolojileri ile hayata geçiriyorum.
+
+Tutkum, karmaşık problemleri basit, zarif ve kullanışlı çözümlere dönüştürmek. Her projemde estetik ve işlevselliği bir araya getirmeyi hedefliyorum.</textarea>
+</div>
+<div class="p-3 border-t border-outline-variant text-right">
+<span class="font-label-md text-label-md text-on-surface-variant">Kelime Sayısı: 42</span>
+</div>
+</div>
+<!-- Social Media Links -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6">
+<h3 class="font-headline-md text-headline-md mb-4 border-b border-outline-variant pb-2">Sosyal Medya Bağlantıları</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-1">LinkedIn</label>
+<div class="flex rounded-lg shadow-sm">
+<span class="inline-flex items-center px-3 rounded-l-lg border border-r-0 border-outline-variant bg-surface-container-low text-outline">
+<svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+</span>
+<input class="flex-1 block w-full rounded-none rounded-r-lg border border-outline-variant bg-surface focus:border-primary focus:ring-1 focus:ring-primary text-body-md" type="url" value="https://linkedin.com/in/username"/>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-1">GitHub</label>
+<div class="flex rounded-lg shadow-sm">
+<span class="inline-flex items-center px-3 rounded-l-lg border border-r-0 border-outline-variant bg-surface-container-low text-outline">
+<svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg>
+</span>
+<input class="flex-1 block w-full rounded-none rounded-r-lg border border-outline-variant bg-surface focus:border-primary focus:ring-1 focus:ring-primary text-body-md" type="url" value="https://github.com/username"/>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-1">X (Twitter)</label>
+<div class="flex rounded-lg shadow-sm">
+<span class="inline-flex items-center px-3 rounded-l-lg border border-r-0 border-outline-variant bg-surface-container-low text-outline">
+<svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg>
+</span>
+<input class="flex-1 block w-full rounded-none rounded-r-lg border border-outline-variant bg-surface focus:border-primary focus:ring-1 focus:ring-primary text-body-md" placeholder="https://twitter.com/username" type="url" value=""/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

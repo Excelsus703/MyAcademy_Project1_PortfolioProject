@@ -1,0 +1,50 @@
+﻿@model List<Service>
+
+@{
+    ViewData["Title"] = "Hizmetler";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<table class="table table-hover table-bordered">
+    <tr>
+        <th>#</th>
+        <th>İkon</th>
+        <th>Başlık</th>
+        <th>Açıklama</th>
+        <th>İşlemler</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Icon</td>
+            <td>@item.Title</td>
+            <td>@item.Description</td>
+            <td>
+                <a href="#" onclick="deleteService(@item.Id)" class="btn btn-outline-danger">Sil</a>
+                <a href="/Service/EditService/@item.Id" class="btn btn-outline-info">Güncelle</a>
+            </td>
+        </tr>
+    }
+</table>
+<br />
+<a href="/Service/NewService/" class="btn btn-outline-primary">Yeni Hizmet Ekle</a>
+
+<script>
+    function deleteService(id){
+            Swal.fire({
+      title: "Silmek İstediğinize Emin misiniz?",
+      text: "Bu İşlemi Geri Alamazsınız!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Evet, Sil!",
+      cancelButtonText: "İptal"
+    }).then((result) => {
+      if (result.isConfirmed){
+          window.location.href = "/Service/DeleteService/" + id;
+      }
+    });
+    }
+</script>

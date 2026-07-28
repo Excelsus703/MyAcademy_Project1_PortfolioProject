@@ -1,0 +1,52 @@
+﻿@model UserMessage
+@{
+    ViewData["Title"] = "Mesaj Detayı";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-lg">
+    <!-- Sender Info Card (Left) -->
+    <div class="lg:col-span-1 space-y-gutter">
+        <div class="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant shadow-sm">
+            <h3 class="font-title-sm text-title-sm text-on-surface mb-lg border-b border-outline-variant pb-sm">Gönderen Bilgileri</h3>
+            <div class="space-y-md">
+                <div class="flex items-start gap-md">
+                    <div class="w-10 h-10 rounded-lg bg-primary-fixed flex items-center justify-center text-primary">
+                        <span class="material-symbols-outlined" data-icon="person">person</span>
+                    </div>
+                    <div>
+                        <p class="text-label-caps text-outline uppercase">Ad Soyad</p>
+                        <p class="font-title-sm text-on-surface">@Model.Name</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-md">
+                    <div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-outline">
+                        <span class="material-symbols-outlined" data-icon="mail">mail</span>
+                    </div>
+                    <div class="overflow-hidden">
+                        <p class="text-label-caps text-outline uppercase">E-Posta</p>
+                        <p class="font-body-md text-on-surface truncate">@Model.Email</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Message Content (Right) -->
+    <div class="lg:col-span-2 space-y-lg">
+        <div class="bg-white p-xl rounded-xl border border-outline-variant shadow-sm relative overflow-hidden min-h-[400px] flex flex-col">
+            <!-- Subtle Background Accent -->
+            <div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-16 -mt-16 blur-3xl"></div>
+            <div class="flex justify-between items-start mb-lg">
+                <h3 class="font-headline-md text-headline-md text-on-surface">Mesaj İçeriği</h3>
+                <button class="p-xs text-outline hover:text-primary transition-colors">
+                    <span class="material-symbols-outlined" data-icon="content_copy">content_copy</span>
+                </button>
+            </div>
+            <div class="flex-1">
+                <p class="text-body-md text-on-surface leading-relaxed whitespace-pre-line">
+                    @Model.MessageBody
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

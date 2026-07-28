@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hakkımda Yönetimi - Portfolio CMS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#0053db",
+                        "tertiary-fixed": "#d3e4fe",
+                        "outline": "#737686",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-highest": "#e0e3e5",
+                        "background": "#f7f9fb",
+                        "secondary": "#565e74",
+                        "secondary-container": "#dae2fd",
+                        "error": "#ba1a1a",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "on-tertiary-fixed": "#0b1c30",
+                        "tertiary-container": "#5e6e85",
+                        "on-secondary": "#ffffff",
+                        "surface-bright": "#f7f9fb",
+                        "on-primary-fixed": "#00174b",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "on-secondary-container": "#5c647a",
+                        "on-primary-container": "#eeefff",
+                        "surface-variant": "#e0e3e5",
+                        "surface": "#f7f9fb",
+                        "on-primary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed": "#131b2e",
+                        "surface-dim": "#d8dadc",
+                        "on-background": "#191c1e",
+                        "primary-fixed": "#dbe1ff",
+                        "surface-container": "#eceef0",
+                        "on-surface-variant": "#434655",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "inverse-surface": "#2d3133",
+                        "primary": "#004ac6",
+                        "secondary-fixed": "#dae2fd",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed-dim": "#b7c8e1",
+                        "outline-variant": "#c3c6d7",
+                        "on-tertiary-container": "#e9f0ff",
+                        "surface-container-low": "#f2f4f6",
+                        "tertiary": "#46566c",
+                        "inverse-primary": "#b4c5ff",
+                        "on-tertiary-fixed-variant": "#38485d",
+                        "primary-container": "#2563eb",
+                        "on-surface": "#191c1e",
+                        "surface-container-high": "#e6e8ea",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "1.5rem",
+                        "header-height": "64px",
+                        "sidebar-width": "260px",
+                        "stack-md": "1rem",
+                        "stack-lg": "2rem",
+                        "stack-sm": "0.5rem",
+                        "container-padding": "2rem"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #F8FAFC; color: #191c1e; margin: 0; padding: 0; }
+        .editor-toolbar { border-bottom: 1px solid #e0e3e5; padding: 0.5rem; background: #f2f4f6; border-radius: 0.25rem 0.25rem 0 0; }
+        .editor-content { min-height: 200px; padding: 1rem; outline: none; border-radius: 0 0 0.25rem 0.25rem; }
+    </style>
+</head>
+<body class="flex bg-background h-screen overflow-hidden">
+<!-- SideNavBar -->
+<nav class="bg-secondary-fixed dark:bg-on-secondary-fixed text-primary dark:text-primary-fixed font-body-md text-body-md fixed left-0 top-0 h-screen w-[260px] hidden md:flex flex-col py-stack-lg z-20">
+<div class="px-gutter mb-stack-lg flex items-center gap-stack-sm">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="A small, professional portrait photograph of an administrator. The lighting is bright and even, casting soft shadows. The background is a clean, neutral gray gradient. The person is dressed in modern business casual attire. The image is cropped in a tight circle, suitable for an avatar." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDK_Aw3BAk5_vkrgXOTUsDEvW-yxzMztthBAPC72F1esxIlZYBeOOYHHdyXaCMlPZa8-07Z994OH8HuNAhUQl3zHbZwUVKBPedUA0E971U7NAD7RXrzRm5wNgUIwuIxbHLSJ7yKstBDRIOagRwP6fX9iiRwNsTNf6tZ9ijaPzcD4gTcEutMAwj5VT7gy_7NRTpPoo305YeNrXA1i6Q9_iNgiCk2MRARPS5qCnT8oyAl3Z0zv1N8i31tFs2LZMmFx9HH_zW6xeOaSEg"/>
+<div>
+<h1 class="font-headline-md text-headline-md font-bold text-on-secondary-fixed dark:text-primary-fixed m-0">Portfolio CMS</h1>
+<p class="text-on-secondary-fixed-variant dark:text-on-secondary-fixed-variant text-sm">System Administrator</p>
+</div>
+</div>
+<ul class="flex-1 overflow-y-auto w-full list-none p-0 m-0 space-y-1">
+<li class="px-gutter py-2">
+<a class="flex items-center gap-3 text-on-secondary-fixed-variant dark:text-on-secondary-fixed-variant hover:bg-on-secondary-fixed-variant/5 hover:bg-on-secondary-fixed-variant/10 transition-all duration-200 ease-in-out px-4 py-2 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                    Dashboard
+                </a>
+</li>
+<li class="px-gutter py-2">
+<a class="flex items-center gap-3 text-on-secondary-fixed-variant dark:text-on-secondary-fixed-variant hover:bg-on-secondary-fixed-variant/5 hover:bg-on-secondary-fixed-variant/10 transition-all duration-200 ease-in-out px-4 py-2 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="image">image</span>
+                    Banner / Hero
+                </a>
+</li>
+<li class="px-gutter py-2">
+<a class="flex items-center gap-3 text-on-secondary-fixed-variant dark:text-on-secondary-fixed-variant hover:bg-on-secondary-fixed-variant/5 hover:bg-on-secondary-fixed-variant/10 transition-all duration-200 ease-in-out px-4 py-2 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="folder_special">folder_special</span>
+                    Projelerim
+                </a>
+</li>
+<li class="px-gutter py-2">
+<a class="flex items-center gap-3 text-on-secondary-fixed-variant dark:text-on-secondary-fixed-variant hover:bg-on-secondary-fixed-variant/5 hover:bg-on-secondary-fixed-variant/10 transition-all duration-200 ease-in-out px-4 py-2 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="code">code</span>
+                    Proje Teknolojileri
+                </a>
+</li>
+<li class="px-gutter py-2">
+<a class="flex items-center gap-3 text-on-secondary-fixed-variant dark:text-on-secondary-fixed-variant hover:bg-on-secondary-fixed-variant/5 hover:bg-on-secondary-fixed-variant/10 transition-all duration-200 ease-in-out px-4 py-2 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="star">star</span>
+                    Yeteneklerim
+                </a>
+</li>
+<li class="px-gutter py-2">
+<a class="flex items-center gap-3 border-l-[3px] border-primary bg-surface-variant/10 text-primary dark:text-primary-fixed font-semibold px-4 py-2 rounded-r-lg transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+                    Hakkımda
+                </a>
+</li>
+<li class="px-gutter py-2">
+<a class="flex items-center gap-3 text-on-secondary-fixed-variant dark:text-on-secondary-fixed-variant hover:bg-on-secondary-fixed-variant/5 hover:bg-on-secondary-fixed-variant/10 transition-all duration-200 ease-in-out px-4 py-2 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="school">school</span>
+                    Eğitimlerim
+                </a>
+</li>
+<li class="px-gutter py-2">
+<a class="flex items-center gap-3 text-on-secondary-fixed-variant dark:text-on-secondary-fixed-variant hover:bg-on-secondary-fixed-variant/5 hover:bg-on-secondary-fixed-variant/10 transition-all duration-200 ease-in-out px-4 py-2 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="work">work</span>
+                    İş Deneyimlerim
+                </a>
+</li>
+<li class="px-gutter py-2">
+<a class="flex items-center gap-3 text-on-secondary-fixed-variant dark:text-on-secondary-fixed-variant hover:bg-on-secondary-fixed-variant/5 hover:bg-on-secondary-fixed-variant/10 transition-all duration-200 ease-in-out px-4 py-2 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="handshake">handshake</span>
+                    Hizmetlerim
+                </a>
+</li>
+<li class="px-gutter py-2">
+<a class="flex items-center gap-3 text-on-secondary-fixed-variant dark:text-on-secondary-fixed-variant hover:bg-on-secondary-fixed-variant/5 hover:bg-on-secondary-fixed-variant/10 transition-all duration-200 ease-in-out px-4 py-2 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="format_quote">format_quote</span>
+                    Hakkımda Söylenenler
+                </a>
+</li>
+<li class="px-gutter py-2">
+<a class="flex items-center gap-3 text-on-secondary-fixed-variant dark:text-on-secondary-fixed-variant hover:bg-on-secondary-fixed-variant/5 hover:bg-on-secondary-fixed-variant/10 transition-all duration-200 ease-in-out px-4 py-2 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+                    Gelen Mesajlar
+                </a>
+</li>
+</ul>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 md:ml-[260px] flex flex-col h-screen">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-on-background text-primary dark:text-primary-fixed font-body-md text-body-md docked full-width top-0 h-header-height border-b border-outline-variant dark:border-outline shadow-sm flex justify-between items-center w-full px-gutter z-10 sticky">
+<div class="flex items-center gap-4">
+<button class="md:hidden text-secondary p-2 hover:bg-surface-variant/20 rounded-full transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="relative focus-within:ring-2 focus-within:ring-primary/15 rounded-lg transition-all duration-200">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-secondary pointer-events-none">search</span>
+<input class="pl-10 pr-4 py-2 rounded-lg border border-outline-variant bg-surface-container-lowest focus:border-primary focus:ring-0 focus:outline-none w-64 text-sm transition-colors" placeholder="Ara..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed transition-colors p-2 rounded-full hover:bg-surface-variant/20">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-secondary dark:text-secondary-fixed-dim hover:text-primary dark:hover:text-primary-fixed transition-colors p-2 rounded-full hover:bg-surface-variant/20">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center cursor-pointer border border-primary/30">
+<img class="w-full h-full rounded-full object-cover" data-alt="A tiny profile thumbnail of a professional user. Bright, modern lighting on a clean studio background. The user is smiling subtly. Suitable for a top navigation bar user icon." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5Hqt-Dqd1u1veGziU-WJgOGeeQveFnRzYxXEWr46x72gFRKErt_jh1IzMRSw6ilJBYEaxIzY-Jj4HgkRO5uUTsn_-XS8Vhr8n4Ycmh477kCppuSo4721pCU-agaLd3k-V92cpniBZGfdLa1cr32ZgxxpLkznh7o9CGNt-gTSsiJ6beepvcbomqhq7FPD14QNxwvH8VXZsfaQDcnFPTtMgGHU2cZ6Mr_wbrzUZLsQznr-UBMTkI8pY5k1c4aBSVkwl2RKO3Q9xqic"/>
+</div>
+</div>
+</header>
+<!-- Main Workspace -->
+<main class="flex-1 overflow-y-auto p-container-padding bg-background w-full">
+<div class="max-w-5xl mx-auto space-y-stack-lg">
+<!-- Page Header -->
+<div class="flex justify-between items-end pb-4 border-b border-surface-variant">
+<div>
+<h2 class="font-headline-xl text-headline-xl text-on-surface m-0">Hakkımda Yönetimi</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Kişisel bilgilerinizi, biyografinizi ve istatistiklerinizi güncelleyin.</p>
+</div>
+<button class="bg-primary-container text-on-primary font-label-md text-label-md px-6 py-2.5 rounded-lg hover:bg-on-primary-fixed-variant transition-colors shadow-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">save</span>
+                        Değişiklikleri Kaydet
+                    </button>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Left Column: Biography (Span 8) -->
+<div class="lg:col-span-8 space-y-6">
+<!-- Bio Editor Card -->
+<div class="bg-surface-container-lowest border border-surface-variant rounded-xl shadow-sm p-6">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">edit_note</span>
+                                Biyografi
+                            </h3>
+<div class="border border-outline-variant rounded-lg overflow-hidden focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/15 transition-all">
+<div class="editor-toolbar flex gap-2">
+<button class="p-1.5 text-secondary hover:bg-surface-variant rounded transition-colors"><span class="material-symbols-outlined text-sm">format_bold</span></button>
+<button class="p-1.5 text-secondary hover:bg-surface-variant rounded transition-colors"><span class="material-symbols-outlined text-sm">format_italic</span></button>
+<button class="p-1.5 text-secondary hover:bg-surface-variant rounded transition-colors"><span class="material-symbols-outlined text-sm">format_list_bulleted</span></button>
+<button class="p-1.5 text-secondary hover:bg-surface-variant rounded transition-colors"><span class="material-symbols-outlined text-sm">link</span></button>
+</div>
+<div class="editor-content bg-white" contenteditable="true">
+<p class="font-body-md text-body-md text-on-surface">Merhaba, ben profesyonel bir yazılım geliştiricisiyim. Yılların verdiği tecrübe ile modern, ölçeklenebilir ve kullanıcı odaklı çözümler üretiyorum. Uzmanlık alanım ağırlıklı olarak web teknolojileri üzerine kurulu olup...</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Details & Photo (Span 4) -->
+<div class="lg:col-span-4 space-y-6">
+<!-- Profile Photo Card -->
+<div class="bg-surface-container-lowest border border-surface-variant rounded-xl shadow-sm p-6 text-center">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4 text-left">Profil Fotoğrafı</h3>
+<div class="relative w-32 h-32 mx-auto mb-4 group cursor-pointer">
+<img class="w-full h-full rounded-full object-cover border-4 border-surface-variant group-hover:border-primary transition-colors" data-alt="A high-quality, professional headshot photo of an individual against a clean, light studio background. Soft, diffused lighting highlights facial features naturally. The person exudes confidence and approachability, suitable for a professional portfolio or corporate 'About Me' page." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdtjaSlAUf71nlVlu51vP4dApKpMRSEsmKUdiyQv3kqSFaiq6nFa5F1PhajEtyxJQuwB_EV84M4_l0g1zc41rqR98A0XfUpFaPpdPD8-HJ3-UOedL5iQf8awYQBiXvazoXndI6RanQyORTYw6imDS-4MMZ0bZIoFS9ewWMsFl7my2CcutbTgn_hEQofsG0lu_TjURpxqFG9WqRqN5tGzZZBeMPu859gO7SRJLYND2fw3vtFxLBXiFQ8Ed4eH8wtJZZFO2T5yv-HM8"/>
+<div class="absolute inset-0 bg-black/40 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-white">photo_camera</span>
+</div>
+</div>
+<p class="font-body-md text-label-md text-on-surface-variant mb-4">Önerilen boyut: 500x500px, Maksimum 2MB.</p>
+<button class="w-full py-2 border border-outline-variant rounded-lg font-label-md text-label-md text-on-surface hover:bg-surface-variant/50 transition-colors">Fotoğrafı Değiştir</button>
+</div>
+<!-- Statistics Card -->
+<div class="bg-surface-container-lowest border border-surface-variant rounded-xl shadow-sm p-6">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4">Kişisel İstatistikler</h3>
+<div class="space-y-4">
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-1">Deneyim Yılı</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-secondary text-sm">schedule</span>
+<input class="w-full pl-9 pr-3 py-2 rounded-lg border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/15 outline-none transition-all text-sm font-body-md" type="number" value="5"/>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-1">Tamamlanan Projeler</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-secondary text-sm">task_alt</span>
+<input class="w-full pl-9 pr-3 py-2 rounded-lg border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/15 outline-none transition-all text-sm font-body-md" type="number" value="42"/>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-1">Mutlu Müşteriler</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-secondary text-sm">groups</span>
+<input class="w-full pl-9 pr-3 py-2 rounded-lg border border-outline-variant focus:border-primary focus:ring-2 focus:ring-primary/15 outline-none transition-all text-sm font-body-md" type="number" value="38"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

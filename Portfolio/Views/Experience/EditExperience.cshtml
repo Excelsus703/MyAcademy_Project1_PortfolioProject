@@ -1,0 +1,24 @@
+﻿@model Experience
+@{
+    ViewData["Title"] = "Deneyim Güncelleme Sayfası";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<form class="form-control" method="post">
+    <label>Ünvan</label>
+    <input type="text" asp-for="Title" class="form-control" required />
+    <br />
+    <label>Şirket Adı</label>
+    <input type="text" asp-for="Company" class="form-control" required />
+    <br />
+    <label>Açıklama</label>
+    <textarea asp-for="Description" class="form-control" rows="5" required></textarea>
+    <br />
+    <label>Başlangıç Yılı</label>
+    <input type="text" asp-for="StartYear" class="form-control" required />
+    <br />
+    <label>Bitiş Yılı</label>
+    <input type="text" asp-for="EndYear" class="form-control" />
+    <br />
+    <button class="btn btn-outline-success">Güncelle</button>
+</form>

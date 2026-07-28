@@ -1,0 +1,32 @@
+﻿@model List<Project>
+@*
+    Recent Projects in Dashboard
+*@
+
+@foreach (var item in Model)
+{
+    <table class="w-full text-left border-collapse">
+        <thead>
+            <tr class="bg-surface-container-low font-label-caps text-label-caps text-on-surface-variant border-b border-outline-variant">
+                <th class="px-lg py-3 font-semibold tracking-wider">Görsel</th>
+                <th class="px-lg py-3 font-semibold tracking-wider">Proje Adı</th>
+                <th class="px-lg py-3 font-semibold tracking-wider">Proje Açıklaması</th>
+                <th class="px-lg py-3 font-semibold tracking-wider">DURUM</th>
+                <th class="px-lg py-3 font-semibold tracking-wider text-right">İŞLEM</th>
+            </tr>
+        </thead>
+        <tbody class="font-body-md text-body-md text-on-surface">
+            <tr class="border-b border-outline-variant hover:bg-surface-container-low transition-colors group">
+                <td class="px-lg py-4 font-semibold"><img style="width:50px; height:50px;" src="@item.ImageUrl" /></td>
+                <td class="px-lg py-4 text-on-surface-variant">@item.Name</td>
+                <td class="px-lg py-4 text-on-surface-variant">@item.Description</td>
+                <td class="px-lg py-4">
+                    <span class="inline-flex items-center px-2 py-1 rounded-full bg-[#e6f4ea] text-[#137333] font-label-caps text-label-caps">Yayında</span>
+                </td>
+                <td class="px-lg py-4 text-right">
+                    <button class="text-on-surface-variant group-hover:text-primary transition-colors p-1"><span class="material-symbols-outlined" data-icon="more_vert">more_vert</span></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+}

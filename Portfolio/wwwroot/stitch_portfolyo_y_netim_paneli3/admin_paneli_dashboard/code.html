@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html class="light" lang="tr" style="">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Dashboard - Portfolio Admin</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Google Fonts: Inter & JetBrains Mono -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet">
+    <!-- Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+    <!-- Tailwind Config -->
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#e1e2e4",
+                        "tertiary-fixed-dim": "#4edea3",
+                        "on-secondary-fixed": "#131b2e",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-high": "#e7e8ea",
+                        "surface-dim": "#d9dadc",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "secondary": "#565e74",
+                        "outline": "#727785",
+                        "surface-variant": "#e1e2e4",
+                        "on-primary-fixed": "#001a42",
+                        "on-primary-container": "#fefcff",
+                        "surface-tint": "#005ac2",
+                        "outline-variant": "#c2c6d6",
+                        "on-error-container": "#93000a",
+                        "on-surface-variant": "#424754",
+                        "surface-bright": "#f8f9fb",
+                        "surface-container-low": "#f3f4f6",
+                        "on-primary-fixed-variant": "#004395",
+                        "on-background": "#191c1e",
+                        "tertiary-fixed": "#6ffbbe",
+                        "error-container": "#ffdad6",
+                        "on-secondary-container": "#5c647a",
+                        "on-tertiary-container": "#f5fff6",
+                        "secondary-fixed": "#dae2fd",
+                        "error": "#ba1a1a",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#2e3132",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "secondary-container": "#dae2fd",
+                        "on-surface": "#191c1e",
+                        "primary-fixed-dim": "#adc6ff",
+                        "primary-container": "#2170e4",
+                        "tertiary": "#006947",
+                        "primary-fixed": "#d8e2ff",
+                        "primary": "#0058be",
+                        "background": "#f8f9fb",
+                        "on-tertiary-fixed": "#002113",
+                        "inverse-on-surface": "#f0f1f3",
+                        "surface": "#f8f9fb",
+                        "on-error": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-container": "#00855b",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#005236",
+                        "inverse-primary": "#adc6ff",
+                        "surface-container": "#edeef0"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "container-max": "1440px",
+                        "stack-md": "16px",
+                        "margin-page": "32px",
+                        "stack-lg": "24px",
+                        "sidebar-width": "260px",
+                        "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "headline-xl": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "mono-data": ["JetBrains Mono"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "mono-data": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+            .material-symbols-outlined.fill {
+                font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            }
+
+        /* Ambient shadow for Layer 2 overlays/modals (if needed) */
+        .shadow-ambient {
+            box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md h-screen overflow-hidden flex">
+    <!-- SideNavBar -->
+    <nav class="fixed left-0 top-0 h-full w-[260px] bg-on-secondary-fixed dark:bg-on-secondary-fixed border-r border-outline-variant flex flex-col py-6 z-20">
+        <!-- Header Info -->
+        <div class="px-6 mb-8 flex items-center gap-4">
+            <div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-on-primary-container fill">admin_panel_settings</span>
+            </div>
+            <div>
+                <h1 class="text-headline-md font-headline-md font-bold text-surface-lowest dark:text-surface-lowest leading-tight">Portfolio Admin</h1>
+                <p class="text-label-md font-label-md text-secondary-fixed-dim">Management Suite</p>
+            </div>
+        </div>
+        <!-- Navigation Links -->
+        <div class="flex-1 overflow-y-auto w-full">
+            <ul class="flex flex-col gap-1 w-full">
+                <li class="w-full">
+                    <a class="flex items-center gap-3 px-6 py-3 text-surface-lowest border-l-4 border-primary bg-on-secondary-fixed-variant transition-all duration-200 ease-in-out w-full" href="#">
+                        <span class="material-symbols-outlined text-primary dark:text-primary-fixed-dim" data-icon="dashboard">dashboard</span>
+                        <span class="font-label-md text-label-md text-surface-lowest">Dashboard</span>
+                    </a>
+                </li>
+                <li class="w-full">
+                    <a class="flex items-center gap-3 px-6 py-3 border-l-4 border-transparent text-secondary-fixed-dim hover:bg-on-secondary-fixed-variant hover:text-surface-lowest transition-colors transition-all duration-200 ease-in-out w-full" href="#">
+                        <span class="material-symbols-outlined text-current" data-icon="image">image</span>
+                        <span class="font-label-md text-label-md">Banner / Hero</span>
+                    </a>
+                </li>
+                <li class="w-full">
+                    <a class="flex items-center gap-3 px-6 py-3 border-l-4 border-transparent text-secondary-fixed-dim hover:bg-on-secondary-fixed-variant hover:text-surface-lowest transition-colors transition-all duration-200 ease-in-out w-full" href="#">
+                        <span class="material-symbols-outlined text-current" data-icon="folder_special">folder_special</span>
+                        <span class="font-label-md text-label-md">Projelerim</span>
+                    </a>
+                </li>
+                <li class="w-full">
+                    <a class="flex items-center gap-3 px-6 py-3 border-l-4 border-transparent text-secondary-fixed-dim hover:bg-on-secondary-fixed-variant hover:text-surface-lowest transition-colors transition-all duration-200 ease-in-out w-full" href="#">
+                        <span class="material-symbols-outlined text-current" data-icon="terminal">terminal</span>
+                        <span class="font-label-md text-label-md">Proje Teknolojileri</span>
+                    </a>
+                </li>
+                <li class="w-full">
+                    <a class="flex items-center gap-3 px-6 py-3 border-l-4 border-transparent text-secondary-fixed-dim hover:bg-on-secondary-fixed-variant hover:text-surface-lowest transition-colors transition-all duration-200 ease-in-out w-full" href="#">
+                        <span class="material-symbols-outlined text-current" data-icon="star">star</span>
+                        <span class="font-label-md text-label-md">Yeteneklerim</span>
+                    </a>
+                </li>
+                <li class="w-full">
+                    <a class="flex items-center gap-3 px-6 py-3 border-l-4 border-transparent text-secondary-fixed-dim hover:bg-on-secondary-fixed-variant hover:text-surface-lowest transition-colors transition-all duration-200 ease-in-out w-full" href="#">
+                        <span class="material-symbols-outlined text-current" data-icon="person">person</span>
+                        <span class="font-label-md text-label-md">Hakkımda</span>
+                    </a>
+                </li>
+                <li class="w-full">
+                    <a class="flex items-center gap-3 px-6 py-3 border-l-4 border-transparent text-secondary-fixed-dim hover:bg-on-secondary-fixed-variant hover:text-surface-lowest transition-colors transition-all duration-200 ease-in-out w-full" href="#">
+                        <span class="material-symbols-outlined text-current" data-icon="school">school</span>
+                        <span class="font-label-md text-label-md">Eğitimlerim</span>
+                    </a>
+                </li>
+                <li class="w-full">
+                    <a class="flex items-center gap-3 px-6 py-3 border-l-4 border-transparent text-secondary-fixed-dim hover:bg-on-secondary-fixed-variant hover:text-surface-lowest transition-colors transition-all duration-200 ease-in-out w-full" href="#">
+                        <span class="material-symbols-outlined text-current" data-icon="work">work</span>
+                        <span class="font-label-md text-label-md">İş Deneyimlerim</span>
+                    </a>
+                </li>
+                <li class="w-full">
+                    <a class="flex items-center gap-3 px-6 py-3 border-l-4 border-transparent text-secondary-fixed-dim hover:bg-on-secondary-fixed-variant hover:text-surface-lowest transition-colors transition-all duration-200 ease-in-out w-full" href="#">
+                        <span class="material-symbols-outlined text-current" data-icon="handshake">handshake</span>
+                        <span class="font-label-md text-label-md">Hizmetlerim</span>
+                    </a>
+                </li>
+                <li class="w-full">
+                    <a class="flex items-center gap-3 px-6 py-3 border-l-4 border-transparent text-secondary-fixed-dim hover:bg-on-secondary-fixed-variant hover:text-surface-lowest transition-colors transition-all duration-200 ease-in-out w-full" href="#">
+                        <span class="material-symbols-outlined text-current" data-icon="format_quote">format_quote</span>
+                        <span class="font-label-md text-label-md">Hakkımda Söylenenler</span>
+                    </a>
+                </li>
+                <li class="w-full">
+                    <a class="flex items-center gap-3 px-6 py-3 border-l-4 border-transparent text-secondary-fixed-dim hover:bg-on-secondary-fixed-variant hover:text-surface-lowest transition-colors transition-all duration-200 ease-in-out w-full" href="#">
+                        <span class="material-symbols-outlined text-current" data-icon="mail">mail</span>
+                        <span class="font-label-md text-label-md">Gelen Mesajlar</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="mt-auto px-6 pt-4 border-t border-outline-variant/20">
+            <a class="flex items-center gap-3 py-3 text-error hover:bg-error/10 rounded-lg transition-all duration-200 ease-in-out w-full px-4" href="#">
+                <span class="material-symbols-outlined" data-icon="logout">logout</span>
+                <span class="font-label-md text-label-md">Çıkış Yap</span>
+            </a>
+        </div>
+    </nav>
+    <!-- Main Content Area (offset by sidebar) -->
+    <div class="flex-1 ml-[260px] flex flex-col h-full bg-background relative">
+        <!-- TopNavBar -->
+        <header class="flex justify-between items-center h-16 px-gutter bg-surface dark:bg-surface-dim border-b border-outline-variant shrink-0 w-full z-10 sticky top-0">
+            <!-- Search Bar (Left) -->
+            <div class="flex items-center">
+                <div class="relative w-64">
+                    <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span>
+                    <input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border border-outline-variant rounded-full font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" placeholder="Search..." type="text">
+                </div>
+            </div>
+            <!-- Trailing Actions -->
+            <div class="flex items-center gap-4">
+                <button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-colors cursor-pointer active:scale-95 transition-transform relative">
+                    <span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+                    <span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
+                </button>
+                <button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-colors cursor-pointer active:scale-95 transition-transform">
+                    <span class="material-symbols-outlined" data-icon="settings">settings</span>
+                </button>
+                <div class="h-8 w-px bg-outline-variant mx-2"></div>
+                <!-- Profile -->
+                <button class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant hover:ring-2 hover:ring-primary transition-all cursor-pointer active:scale-95 transition-transform">
+                    <img alt="Administrator Profile" class="w-full h-full object-cover" data-alt="Professional headshot of a corporate administrator in a modern office setting. Sharp focus, bright lighting, high quality portrait. White background, formal attire, confident posture, minimal background elements." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjBYVsM7nuHgcVkG-h10SM8fIsjsmI31aKqHukZcElZMrxIDN15B2zc0Y6yWoEKk95DJq_0vVX_LEiRIeYYkLGrNH6KmrQfJwW0G5Vw8xim_QPtcTjOADzdNvpYEGKUu5NozCUkq1FN_Vz7xzqD9ji5uO3kDF8BIPK7N5j5G2e4l1bTc94rY9Jm0Hh5UptX11UuSBE374Sh41w8P0qbXCupS5tQPS3Wx-P5AD3bxD9MWMsyyqRCt0mFLz5xr24Dg2_klCdfYGBxqr8">
+                </button>
+            </div>
+        </header>
+        <!-- Page Content Scrollable Area -->
+        <main class="flex-1 overflow-y-auto p-margin-page">
+            <div class="max-w-container-max mx-auto space-y-stack-lg pb-12">
+                <!-- Header / Welcome -->
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-2">
+                    <div>
+                        <h2 class="font-headline-xl text-headline-xl text-on-surface mb-1">Hoş Geldiniz, Admin!</h2>
+                        <p class="font-body-lg text-body-lg text-on-surface-variant">İşte portföyünüzün bugünkü özeti.</p>
+                    </div>
+                    <!-- Quick Actions Row -->
+                    <div class="flex flex-wrap gap-3">
+                        <button class="flex items-center gap-2 px-4 py-2 bg-primary text-on-primary rounded-lg font-label-md text-label-md hover:bg-on-primary-fixed-variant transition-colors shadow-sm">
+                            <span class="material-symbols-outlined text-[18px]">add</span>
+                            Yeni Proje Ekle
+                        </button>
+                        <button class="flex items-center gap-2 px-4 py-2 bg-surface border border-outline-variant text-on-surface rounded-lg font-label-md text-label-md hover:bg-surface-container-low transition-colors">
+                            <span class="material-symbols-outlined text-[18px]">open_in_new</span>
+                            Siteyi Görüntüle
+                        </button>
+                    </div>
+                </div>
+                <!-- Stats Overview Bento Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-stack-md">
+                    <!-- Stat Card 1 -->
+                    <div class="bg-surface-container-lowest border border-surface-variant rounded-xl p-6 flex flex-col justify-between h-32 relative overflow-hidden group hover:border-primary/50 transition-colors">
+                        <div class="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-full -mr-8 -mt-8 pointer-events-none group-hover:scale-110 transition-transform"></div>
+                        <div class="flex items-center justify-between z-10">
+                            <span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Toplam Proje</span>
+                            <span class="material-symbols-outlined text-primary bg-primary/10 p-2 rounded-lg">folder</span>
+                        </div>
+                        <div class="z-10">
+                            <span class="font-headline-xl text-headline-xl text-on-surface font-mono-data">24</span>
+                        </div>
+                    </div>
+                    <!-- Stat Card 2 -->
+                    <div class="bg-surface-container-lowest border border-surface-variant rounded-xl p-6 flex flex-col justify-between h-32 relative overflow-hidden group hover:border-primary/50 transition-colors">
+                        <div class="absolute top-0 right-0 w-24 h-24 bg-tertiary/5 rounded-full -mr-8 -mt-8 pointer-events-none group-hover:scale-110 transition-transform"></div>
+                        <div class="flex items-center justify-between z-10">
+                            <span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Toplam Yetenek</span>
+                            <span class="material-symbols-outlined text-tertiary bg-tertiary/10 p-2 rounded-lg">star</span>
+                        </div>
+                        <div class="z-10">
+                            <span class="font-headline-xl text-headline-xl text-on-surface font-mono-data">38</span>
+                        </div>
+                    </div>
+                    <!-- Stat Card 3 (Highlighted) -->
+                    <div class="bg-surface-container-lowest border border-primary/30 rounded-xl p-6 flex flex-col justify-between h-32 relative overflow-hidden shadow-sm group hover:border-primary transition-colors ring-1 ring-primary/10">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full -mr-12 -mt-12 pointer-events-none group-hover:scale-110 transition-transform"></div>
+                        <div class="flex items-center justify-between z-10">
+                            <div class="flex items-center gap-2">
+                                <span class="font-label-md text-label-md text-primary font-bold uppercase tracking-wider">Toplam Mesaj</span>
+                                <span class="flex h-2 w-2 relative">
+                                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-error opacity-75"></span>
+                                    <span class="relative inline-flex rounded-full h-2 w-2 bg-error"></span>
+                                </span>
+                            </div>
+                            <span class="material-symbols-outlined text-primary bg-primary/10 p-2 rounded-lg">mail</span>
+                        </div>
+                        <div class="flex items-end gap-3 z-10">
+                            <span class="font-headline-xl text-headline-xl text-on-surface font-mono-data">142</span>
+                            <span class="font-label-md text-label-md text-error bg-error/10 px-2 py-0.5 rounded-full mb-1">+5 Yeni</span>
+                        </div>
+                    </div>
+                    <!-- Stat Card 4 -->
+                    <div class="bg-surface-container-lowest border border-surface-variant rounded-xl p-6 flex flex-col justify-between h-32 relative overflow-hidden group hover:border-primary/50 transition-colors">
+                        <div class="absolute top-0 right-0 w-24 h-24 bg-secondary/5 rounded-full -mr-8 -mt-8 pointer-events-none group-hover:scale-110 transition-transform"></div>
+                        <div class="flex items-center justify-between z-10">
+                            <span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Site Ziyaretçisi</span>
+                            <span class="material-symbols-outlined text-secondary bg-secondary/10 p-2 rounded-lg">monitoring</span>
+                        </div>
+                        <div class="flex items-end justify-between w-full z-10">
+                            <span class="font-headline-xl text-headline-xl text-on-surface font-mono-data">12.4K</span>
+                            <span class="font-label-md text-label-md text-tertiary flex items-center gap-1 mb-1"><span class="material-symbols-outlined text-[16px]">trending_up</span> 12%</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Main Content Grid -->
+                <div class="space-y-4">
+                    <h3 class="font-headline-md text-headline-md text-on-surface">Hızlı Aksiyonlar</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <button class="flex items-center justify-center gap-3 p-4 bg-primary text-on-primary rounded-xl hover:bg-on-primary-fixed-variant transition-all shadow-sm group">
+                            <span class="material-symbols-outlined group-hover:scale-110 transition-transform">add_circle</span>
+                            <span class="font-label-md">Yeni Proje Ekle</span>
+                        </button>
+                        <button class="flex items-center justify-center gap-3 p-4 bg-primary text-on-primary rounded-xl hover:bg-on-primary-fixed-variant transition-all shadow-sm group">
+                            <span class="material-symbols-outlined group-hover:scale-110 transition-transform">mark_email_unread</span>
+                            <span class="font-label-md">Mesajları Oku</span>
+                        </button>
+                        <button class="flex items-center justify-center gap-3 p-4 bg-primary text-on-primary rounded-xl hover:bg-on-primary-fixed-variant transition-all shadow-sm group">
+                            <span class="material-symbols-outlined group-hover:scale-110 transition-transform">manage_accounts</span>
+                            <span class="font-label-md">Profilimi Düzenle</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-stack-lg">
+                    <!-- Left Column: Recent Messages List (8 cols) -->
+                    <div class="lg:col-span-8 bg-surface-container-lowest border border-surface-variant rounded-xl overflow-hidden flex flex-col">
+                        <div class="p-6 border-b border-surface-variant flex justify-between items-center bg-surface-bright">
+                            <h3 class="font-headline-md text-headline-md text-on-surface">Son Gelen Mesajlar</h3>
+                            <button class="font-label-md text-label-md text-primary hover:text-primary-container transition-colors flex items-center gap-1">
+                                Tümünü Gör <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                            </button>
+                        </div>
+                        <div class="flex-1 overflow-x-auto">
+                            <table class="w-full text-left border-collapse">
+                                <thead>
+                                    <tr class="bg-surface-container-low border-b border-surface-variant">
+                                        <th class="px-6 py-3 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Gönderen</th>
+                                        <th class="px-6 py-3 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Konu</th>
+                                        <th class="px-6 py-3 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Tarih</th>
+                                        <th class="px-6 py-3 font-label-md text-label-md text-on-surface-variant uppercase tracking-wider text-right">Aksiyon</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="font-body-md text-body-md text-on-surface">
+                                    <tr class="border-b border-surface-variant hover:bg-surface-container-low transition-colors group cursor-pointer bg-primary/5">
+                                        <td class="px-6 py-4">
+                                            <div class="flex items-center gap-3">
+                                                <div class="w-8 h-8 rounded-full bg-tertiary-container text-on-tertiary flex items-center justify-center font-bold font-label-md shrink-0">AE</div>
+                                                <div class="flex flex-col">
+                                                    <span class="font-semibold">Ahmet Yılmaz</span>
+                                                    <span class="text-xs text-on-surface-variant">ahmet@example.com</span>
+                                                </div>
+                                                <span class="w-2 h-2 bg-primary rounded-full ml-2"></span>
+                                            </div>
+                                        </td>
+                                        <td class="px-6 py-4 truncate max-w-[200px] font-medium">Yeni Proje Teklifi Hk.</td>
+                                        <td class="px-6 py-4 text-on-surface-variant whitespace-nowrap">10 dk önce</td>
+                                        <td class="px-6 py-4 text-right">
+                                            <button class="p-1 text-on-surface-variant hover:text-primary transition-colors opacity-0 group-hover:opacity-100"><span class="material-symbols-outlined">visibility</span></button>
+                                        </td>
+                                    </tr>
+                                    <tr class="border-b border-surface-variant hover:bg-surface-container-low transition-colors group cursor-pointer">
+                                        <td class="px-6 py-4">
+                                            <div class="flex items-center gap-3">
+                                                <div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold font-label-md shrink-0">ZD</div>
+                                                <div class="flex flex-col">
+                                                    <span class="">Zeynep Demir</span>
+                                                    <span class="text-xs text-on-surface-variant">zeynep.d@company.com</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="px-6 py-4 truncate max-w-[200px] text-on-surface-variant">İş Başvurusu Değerlendirmesi</td>
+                                        <td class="px-6 py-4 text-on-surface-variant whitespace-nowrap">Dün, 14:30</td>
+                                        <td class="px-6 py-4 text-right">
+                                            <button class="p-1 text-on-surface-variant hover:text-primary transition-colors opacity-0 group-hover:opacity-100"><span class="material-symbols-outlined">visibility</span></button>
+                                        </td>
+                                    </tr>
+                                    <tr class="border-b border-surface-variant hover:bg-surface-container-low transition-colors group cursor-pointer">
+                                        <td class="px-6 py-4">
+                                            <div class="flex items-center gap-3">
+                                                <div class="w-8 h-8 rounded-full bg-surface-container-highest text-on-surface flex items-center justify-center font-bold font-label-md shrink-0">CC</div>
+                                                <div class="flex flex-col">
+                                                    <span class="">Can Çelik</span>
+                                                    <span class="text-xs text-on-surface-variant">can@startup.io</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="px-6 py-4 truncate max-w-[200px] text-on-surface-variant">Freelance Destek İhtiyacı</td>
+                                        <td class="px-6 py-4 text-on-surface-variant whitespace-nowrap">12 Eki, 09:15</td>
+                                        <td class="px-6 py-4 text-right">
+                                            <button class="p-1 text-on-surface-variant hover:text-primary transition-colors opacity-0 group-hover:opacity-100"><span class="material-symbols-outlined">visibility</span></button>
+                                        </td>
+                                    </tr>
+                                    <tr class="hover:bg-surface-container-low transition-colors group cursor-pointer">
+                                        <td class="px-6 py-4">
+                                            <div class="flex items-center gap-3">
+                                                <div class="w-8 h-8 rounded-full bg-surface-container-highest text-on-surface flex items-center justify-center font-bold font-label-md shrink-0">EB</div>
+                                                <div class="flex flex-col">
+                                                    <span class="">Elif Bozkurt</span>
+                                                    <span class="text-xs text-on-surface-variant">elif.b@agency.net</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="px-6 py-4 truncate max-w-[200px] text-on-surface-variant">Portfolyo Tasarım Revizyonu</td>
+                                        <td class="px-6 py-4 text-on-surface-variant whitespace-nowrap">10 Eki, 16:45</td>
+                                        <td class="px-6 py-4 text-right">
+                                            <button class="p-1 text-on-surface-variant hover:text-primary transition-colors opacity-0 group-hover:opacity-100"><span class="material-symbols-outlined">visibility</span></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- Right Column: Chart / Distribution (4 cols) -->
+                    <div class="lg:col-span-4 bg-surface-container-lowest border border-surface-variant rounded-xl overflow-hidden flex flex-col relative">
+                        <div class="p-6 border-b border-surface-variant bg-surface-bright">
+                            <h3 class="font-headline-md text-headline-md text-on-surface">Proje İstatistikleri</h3>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col justify-center items-center relative">
+                            <!-- Faux Chart visualization -->
+                            <div class="w-48 h-48 rounded-full border-[16px] border-surface-container-highest relative flex items-center justify-center mb-6">
+                                <!-- Chart segments via CSS conical gradient approximation -->
+                                <div class="absolute inset-[-16px] rounded-full border-[16px] border-primary" style="clip-path: polygon(50% 50%, 50% 0, 100% 0, 100% 100%, 50% 100%);"></div>
+                                <div class="absolute inset-[-16px] rounded-full border-[16px] border-tertiary" style="clip-path: polygon(50% 50%, 0 100%, 0 50%, 0 0, 50% 0);"></div>
+                                <div class="flex flex-col items-center text-center bg-surface-container-lowest w-full h-full rounded-full justify-center">
+                                    <span class="font-headline-xl text-headline-xl text-on-surface font-mono-data">24</span>
+                                    <span class="font-label-md text-label-md text-on-surface-variant">Toplam</span>
+                                </div>
+                            </div>
+                            <!-- Legend -->
+                            <div class="w-full space-y-3">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-2">
+                                        <span class="w-3 h-3 rounded-full bg-primary"></span>
+                                        <span class="font-body-md text-body-md text-on-surface-variant">Tamamlanan</span>
+                                    </div>
+                                    <span class="font-label-md text-label-md text-on-surface font-mono-data">15</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-2">
+                                        <span class="w-3 h-3 rounded-full bg-tertiary"></span>
+                                        <span class="font-body-md text-body-md text-on-surface-variant">Devam Eden</span>
+                                    </div>
+                                    <span class="font-label-md text-label-md text-on-surface font-mono-data">6</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-2">
+                                        <span class="w-3 h-3 rounded-full bg-surface-container-highest"></span>
+                                        <span class="font-body-md text-body-md text-on-surface-variant">Planlanan</span>
+                                    </div>
+                                    <span class="font-label-md text-label-md text-on-surface font-mono-data">3</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+
+</body>
+</html>

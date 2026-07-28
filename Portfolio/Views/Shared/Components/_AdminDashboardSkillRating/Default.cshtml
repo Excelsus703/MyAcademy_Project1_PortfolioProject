@@ -1,0 +1,46 @@
+﻿@model List<Skill>
+@*
+    Dashboard Skill Rating Info
+*@
+@{
+    string progressBarColor;
+}
+
+@foreach (var item in Model)
+{
+    @if (item.MasteryRate <= 25)
+    {
+        progressBarColor = "progress-bar progress-bar-striped bg-danger";
+    }
+    else if (item.MasteryRate >= 26 && item.MasteryRate <= 50)
+    {
+        progressBarColor = "progress-bar progress-bar-striped bg-secondary";
+    }
+    else if (item.MasteryRate >= 51 && item.MasteryRate <= 69)
+    {
+        progressBarColor = "progress-bar progress-bar-striped bg-warning";
+    }
+    else if (item.MasteryRate >= 70 && item.MasteryRate <= 84)
+    {
+        progressBarColor = "progress-bar progress-bar-striped bg-primary";
+    }
+    else if (item.MasteryRate >= 85 && item.MasteryRate <= 100)
+    {
+        progressBarColor = "progress-bar progress-bar-striped bg-success";
+    }
+    else
+    {
+        progressBarColor = "progress-bar progress-bar-striped";
+    }
+
+    <div>
+        <div class="flex justify-between mb-1">
+            <span class="font-body-sm text-body-sm font-semibold">@item.Name</span>
+            <span class="font-body-sm text-body-sm text-on-surface-variant">@item.MasteryRate%</span>
+        </div>
+        <div class="progress" role="progressbar" aria-valuenow="@item.MasteryRate" aria-valuemin="0" aria-valuemax="100">
+            <div class="@progressBarColor" style="width: @item.MasteryRate%"></div>
+        </div>
+    </div>
+}
+<a href="/Skill/Index/" class="btn btn-outline-primary" style="width:100%;">Tümünü Gör</a>

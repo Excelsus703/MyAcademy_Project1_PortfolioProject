@@ -1,0 +1,12 @@
+﻿@model SkillCategory
+@{
+    ViewData["Title"] = "Kategori Düzenle";
+    Layout = "~/Views/AdminLayout/Layout.cshtml";
+}
+
+<form class="form-control" method="post">
+    <label>Kategori Adı</label>
+    <input type="text" asp-for="Name" class="form-control" required>
+    <br />
+    <button class="btn btn-outline-success">Güncelle</button>
+</form>
