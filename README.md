@@ -1,6 +1,7 @@
 # MyAcademy_PortfolioProject | ASP.NET Core MVC
 
 Kişisel portfolyo sitesi ve bu siteyi yönetmek için geliştirilen, tam yetkili bir Admin Panelinden oluşan full-stack bir web uygulaması. Proje, tek sayfalık (Single-Page Layout) bir ön yüz ile modüler ve dinamik bir yönetim panelini bir araya getiriyor.
+Bu projedeki nihai amacım, ASP.NET Core MVC, Entity Framework Core Code-First yaklaşımı, ViewComponent mimarisi ve rol tabanlı kimlik doğrulama konularında edindiğim bilgileri uçtan uca bir uygulamada bir araya getirmek amacıyla geliştirilmiştir.
 
 ## 🛠 Teknik Altyapı
 
@@ -45,5 +46,3 @@ Proje aşağıdaki entity'ler üzerine kuruldu:
 *(Buraya ön yüz ve admin panel ekran görüntülerini ekleyebilirsin)*
 
 ---
-
-Bu proje, ASP.NET Core MVC, Entity Framework Core Code-First yaklaşımı, ViewComponent mimarisi ve rol tabanlı kimlik doğrulama konularında edindiğim bilgileri uçtan uca bir uygulamada bir araya getirmek amacıyla geliştirilmiştir.
